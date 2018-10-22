@@ -101,21 +101,30 @@ body{
 
 /* -------------------------------------- upload window -------------------------------------- */
 #upload_window{
+    display: block;
+    width: 50%;
+    margin: auto;
+}
+
+#file_upload_form{ 
+    text-align: center;
+    margin-top: 30%;
+}
+
+input[type="file"] {
     display: none;
 }
 
-
-
-/*.btn-open-side-bar:before{
-    content:"\e236";
+#file_selected {
+    display: block;
 }
 
-.btn-close-side-bar:before{
-    content:"\e014";
-}*/
+#categories {
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    overflow-y:scroll; 
+    text-align: left;
+}
 
-
-
-/* #333;
-  #9d9d9d;
-   #fff;*/
