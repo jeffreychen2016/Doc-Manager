@@ -1,0 +1,716 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>CEMS Export Sync Tool - User Guide</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+  /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+  /* Author: Nicolas Hery - http://nicolashery.com */
+  /* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+  /* Source: https://github.com/nicolahery/markdownpad-github */
+  
+  /* RESET
+  =============================================================================*/
+  
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  /* BODY
+  =============================================================================*/
+  
+  body {
+    font-family: Helvetica, arial, freesans, clean, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  body>*:first-child {
+    margin-top: 0 !important;
+  }
+  
+  body>*:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  /* BLOCKS
+  =============================================================================*/
+  
+  p, blockquote, ul, ol, dl, table, pre {
+    margin: 15px 0;
+  }
+  
+  /* HEADERS
+  =============================================================================*/
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0 10px;
+    padding: 0;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+    font-size: inherit;
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #000;
+  }
+  
+  h2 {
+    font-size: 24px;
+    border-bottom: 1px solid #ccc;
+    color: #000;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  h4 {
+    font-size: 16px;
+  }
+  
+  h5 {
+    font-size: 14px;
+  }
+  
+  h6 {
+    color: #777;
+    font-size: 14px;
+  }
+  
+  body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+    margin-top: 10px;
+  }
+  
+  /* LINKS
+  =============================================================================*/
+  
+  a {
+    color: #4183C4;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* LISTS
+  =============================================================================*/
+  
+  ul, ol {
+    padding-left: 30px;
+  }
+  
+  ul li > :first-child, 
+  ol li > :first-child, 
+  ul li ul:first-of-type, 
+  ol li ol:first-of-type, 
+  ul li ol:first-of-type, 
+  ol li ul:first-of-type {
+    margin-top: 0px;
+  }
+  
+  ul ul, ul ol, ol ol, ol ul {
+    margin-bottom: 0;
+  }
+  
+  dl {
+    padding: 0;
+  }
+  
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px;
+  }
+  
+  dl dt:first-child {
+    padding: 0;
+  }
+  
+  dl dt>:first-child {
+    margin-top: 0px;
+  }
+  
+  dl dt>:last-child {
+    margin-bottom: 0px;
+  }
+  
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px;
+  }
+  
+  dl dd>:first-child {
+    margin-top: 0px;
+  }
+  
+  dl dd>:last-child {
+    margin-bottom: 0px;
+  }
+  
+  /* CODE
+  =============================================================================*/
+  
+  pre, code, tt {
+    font-size: 12px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+  }
+  
+  code, tt {
+    margin: 0 0px;
+    padding: 0px 0px;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+  }
+  
+  pre>code {
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    border: none;
+    background: transparent;
+  }
+  
+  pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+  }
+  
+  pre code, pre tt {
+    background-color: transparent;
+    border: none;
+  }
+  
+  kbd {
+      -moz-border-bottom-colors: none;
+      -moz-border-left-colors: none;
+      -moz-border-right-colors: none;
+      -moz-border-top-colors: none;
+      background-color: #DDDDDD;
+      background-image: linear-gradient(#F1F1F1, #DDDDDD);
+      background-repeat: repeat-x;
+      border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+      border-image: none;
+      border-radius: 2px 2px 2px 2px;
+      border-style: solid;
+      border-width: 1px;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      line-height: 10px;
+      padding: 1px 4px;
+  }
+  
+  /* QUOTES
+  =============================================================================*/
+  
+  blockquote {
+    border-left: 4px solid #DDD;
+    padding: 0 15px;
+    color: #777;
+  }
+  
+  blockquote>:first-child {
+    margin-top: 0px;
+  }
+  
+  blockquote>:last-child {
+    margin-bottom: 0px;
+  }
+  
+  /* HORIZONTAL RULES
+  =============================================================================*/
+  
+  hr {
+    clear: both;
+    margin: 15px 0;
+    height: 0px;
+    overflow: hidden;
+    border: none;
+    background: transparent;
+    border-bottom: 4px solid #ddd;
+    padding: 0;
+  }
+  
+  /* TABLES
+  =============================================================================*/
+  
+  table th {
+    font-weight: bold;
+  }
+  
+  table th, table td {
+    border: 1px solid #ccc;
+    padding: 6px 13px;
+  }
+  
+  table tr {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+  }
+  
+  /* IMAGES
+  =============================================================================*/
+  
+  img {
+    max-width: 100%
+  }
+  </style>
+</head>
+<body>
+<div style="display:inline-block;margin-right:10px;">
+	<img src="./images/logo.png"/>
+</div>
+<div style="display:inline-block;vertical-align:bottom">
+	<h1>Export Sync Tool User Guide</h1>
+</div>
+<h1>Table of Contents</h1>
+<div id="TOC">
+<ul>
+<li><a href="#system-requirements">System Requirements</a></li>
+<li><a href="#installation">Installation</a><ul>
+<li><a href="#windows">Windows</a></li>
+</ul></li>
+<li><a href="#uninstall">Uninstall</a><ul>
+<li><a href="#windows-1">Windows</a></li>
+</ul></li>
+<li><a href="#menu">Menu</a><ul>
+<li><a href="#full-export">Full Export</a></li>
+<li><a href="#check-for-updates">Check for updates</a></li>
+<li><a href="#about">About</a></li>
+</ul></li>
+<li><a href="#dashboard">Dashboard</a><ul>
+<li><a href="#recent-export-status">Recent Export Status</a></li>
+<li><a href="#export-history">Export History</a><ul>
+<li><a href="#export-history-details">Export History Details</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#configuration">Configuration</a><ul>
+<li><a href="#account-information">Account Information</a></li>
+<li><a href="#database-connections">Database Connections</a></li>
+<li><a href="#data-export">Data Export</a></li>
+<li><a href="#custom-properties">Custom Properties</a></li>
+</ul></li>
+<li><a href="#export">Export</a></li>
+<li><a href="#customer-support">Customer Support</a></li>
+<li><a href="#notifications-windows">Notifications (Windows)</a><ul>
+<li><a href="#comdata-export-sync-tool">Comdata Export Sync Tool</a></li>
+</ul></li>
+<li><a href="#logging">Logging</a><ul>
+<li><a href="#application-log">Application Log</a></li>
+<li><a href="#export-log">Export Log</a></li>
+<li><a href="#analytics-report">Analytics Report</a></li>
+</ul></li>
+<li><a href="#software-updates">Software Updates</a></li>
+<li><a href="#scheduled-tasks-windows">Scheduled Tasks (Windows)</a></li>
+</ul>
+</div>
+<p style="page-break-before:always;">
+</p>
+<p><a name="systemRequirements"></a></p>
+<h2 id="system-requirements">System Requirements</h2>
+<p>The application can be installed on the following systems:</p>
+<ul>
+<li>Windows 7 or newer (32-bit)</li>
+<li>Windows 7 or newer (64-bit)
+<p style="page-break-before:always;">
+</p>
+<a name="install-windows"></a></li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h3 id="windows">Windows</h3>
+<ul>
+<li><p>Download the installer from the address provided by your Comdata support representative.</p></li>
+<li><p>Double-click the installation program to begin installation.</p></li>
+</ul>
+<div class="figure">
+<img src="./images/install1.png" />
+
+</div>
+<ul>
+<li>Click ‘Next’</li>
+</ul>
+<div class="figure">
+<img src="./images/install2.png" />
+
+</div>
+<ul>
+<li>Click ‘Next’</li>
+</ul>
+<div class="figure">
+<img src="./images/install3.png" />
+
+</div>
+<ul>
+<li>Click ‘Next’</li>
+</ul>
+<div class="figure">
+<img src="./images/install4.png" />
+
+</div>
+<ul>
+<li>Click ‘Next’</li>
+</ul>
+<div class="figure">
+<img src="./images/install5.png" />
+
+</div>
+<ul>
+<li>Click ‘Finish’
+<p style="page-break-before:always;">
+</p>
+<a name="uninstall-windows"></a></li>
+</ul>
+<h2 id="uninstall">Uninstall</h2>
+<h3 id="windows-1">Windows</h3>
+<ul>
+<li>Click on the start menu</li>
+<li>Click on “All Programs”</li>
+<li>Click on “Comdata Export Sync Tool”</li>
+<li>Click on “Comdata Export Sync Tool Uninstaller”</li>
+</ul>
+<div class="figure">
+<img src="./images/uninstall1.png" />
+
+</div>
+<ul>
+<li>Click ‘Next’</li>
+</ul>
+<div class="figure">
+<img src="./images/uninstall2.png" />
+
+</div>
+<ul>
+<li>Click ‘Next’</li>
+</ul>
+<div class="figure">
+<img src="./images/uninstall3.png" />
+
+</div>
+<ul>
+<li>Click ‘Finish’</li>
+</ul>
+<p style="page-break-before:always;">
+</p>
+<p><a name="menu"></a></p>
+<h2 id="menu">Menu</h2>
+<p>The main menu provides access to additional features of the application.</p>
+<ul>
+<li><a href="#fullExport">Full Export</a></li>
+<li><a href="#checkForUpdates">Check for updates</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+<p style="page-break-before:always;">
+</p>
+<p><a name="fullExport"></a></p>
+<h3 id="full-export">Full Export</h3>
+<p>The <strong>full export</strong> command resets the export process so that <strong>ALL</strong> records are exported and uploaded on the next run of the export process. This command applies only to database queries that reference the time of last successful synchronization.</p>
+<div class="figure">
+<img src="./images/fullExport.png" />
+
+</div>
+<p style="page-break-before:always;">
+</p>
+<p><a name="checkForUpdates"></a></p>
+<h3 id="check-for-updates">Check for updates</h3>
+<p>The <strong>Check for updates</strong> command will connect with the Comdata installation service to check if there are any available updates for this application. You will have the option to download and upgrade your installation if a newer version is available.</p>
+<div class="figure">
+<img src="./images/checkForUpdates1.png" />
+
+</div>
+<p style="page-break-before:always;">
+</p>
+<p><a name="About"></a></p>
+<h3 id="about">About</h3>
+<p>The <strong>About</strong> command will display information about the application.</p>
+<div class="figure">
+<img src="./images/about.png" />
+
+</div>
+<p style="page-break-before:always;">
+</p>
+<p><a name="dashboard"></a></p>
+<h2 id="dashboard">Dashboard</h2>
+<p>The dashboard is the main screen of the application and provide access to all of the features of the application.</p>
+<ul>
+<li><a href="#recentExportStatus">Recent Export Status</a></li>
+<li><a href="#exportHistory">Export History</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#export">Export</a></li>
+<li><a href="#customerSupport">Customer Support</a></li>
+</ul>
+<img src="./images/dashboard.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="recentExportStatus"></a></p>
+<h3 id="recent-export-status">Recent Export Status</h3>
+<p>The <strong>Recent Update Status</strong> area of the dashboard displays the status of the most recent export operation.</p>
+<ul>
+<li>Status displays the result. <strong>SUCCESS</strong>, <strong>ERROR</strong>, or <strong>RUNNING</strong></li>
+<li>Start Time displays the time that the export operation started</li>
+<li>Records displays the total number of records exported and uploaded</li>
+<li>Errors displays the total number of records that contained errors</li>
+</ul>
+<p><strong>NOTE:</strong> Only one export operation can be running at a time.</p>
+<img src="./images/recentExportStatus.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="exportHistory"></a></p>
+<h3 id="export-history">Export History</h3>
+<p>The <strong>Export History</strong> area of the dashboard displays a history of export operations. Each entry displays the following:</p>
+<ul>
+<li>Date displays the time that the export operation started</li>
+<li>Status displays the result. <strong>SUCCESS</strong> or <strong>ERROR</strong></li>
+</ul>
+<p>Click on an entry in this list to <a href="#exportHistoryDetails">view detailed results</a> of the export operation.</p>
+<img src="./images/exportHistory.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="exportHistoryDetails"></a></p>
+<h4 id="export-history-details">Export History Details</h4>
+<p>The <strong>Export History Details</strong> displays detailed results of the selected export operation.</p>
+<ul>
+<li><strong>Export Status</strong>
+<ul>
+<li>Status displays the result. <strong>SUCCESS</strong> or <strong>ERROR</strong></li>
+<li>Start Time displays the time that the export operation started</li>
+<li>End time displays the time that the export opertion completed</li>
+<li>Records displays the total number of records exported and uploaded</li>
+<li>Errors displays the total number of records that contained errors</li>
+<li>Accounting System displays the accounting system used during the export</li>
+<li>Database server displays the database server used during the export</li>
+</ul></li>
+<li><strong>Details</strong>
+<ul>
+<li>Details for each database and each table exported for each database are listed in a hierarchical view. Each entry displays
+<ul>
+<li>Total number of records successfully exported</li>
+<li>Total number of records attempted</li>
+<li>Total number of records containing errors</li>
+<li>Total number of bytes in all of the records exported</li>
+</ul></li>
+</ul></li>
+</ul>
+<img src="./images/exportHistoryDetails.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="configuration"></a></p>
+<h2 id="configuration">Configuration</h2>
+<p>Clicking on the <strong>Configuration</strong> button on the <a href="#dashboard">Dashboard</a> displays the configuration panel used to set all of the options for the export process.</p>
+<ul>
+<li><code>Apply</code>: This button will save any changes made to the configuration settings</li>
+<li><code>Save</code>: This button will save any changes made to the configuration settings and return to the <a href="#dashboard">Dashboard</a></li>
+<li><code>Close</code>: This button will close the configuration panel and return to the <a href="#dashboard">Dashboard</a></li>
+<li><code>Cancel</code>: This button will cancel any unsaved changes made to the configuration settings and return to the <a href="#dashboard">Dashboard</a></li>
+</ul>
+<p>The configuration panel contains multiple tabs used to define the settings for the export process:</p>
+<ul>
+<li><a href="#accountInformation">Account Information</a></li>
+<li><a href="#databaseConnections">Database Connections</a></li>
+<li><a href="#dataExport">Data Export</a></li>
+<li><a href="#customProperties">Custom Properties</a></li>
+</ul>
+<p style="page-break-before:always;">
+</p>
+<p><a name="accountInformation"></a></p>
+<h3 id="account-information">Account Information</h3>
+<p>The <strong>Account Information</strong> tab is used to define the settings for the tenant identifier, PIN, and accounting system to use in the export process:</p>
+<ul>
+<li><code>Tenant ID</code>: Enter your tenant ID</li>
+<li><code>Tenant PIN</code>: Enter the tenant PIN (aka “Password”)</li>
+<li><code>Add</code>: Click Add button to add the tenant to the list.</li>
+<li><code>Remove</code>: Select a tenant from the list and click Remove button to remove the tenant from the list</li>
+<li><code>Accounting System</code>: Select the accounting system / version for your system. <em>This list is enabled when accounting system configuration files have been downloaded.</em></li>
+<li><code>Download Updates</code>: Click this button to connect with the CEMS service to download the available accounting system configuration files for your tenant ID. <em>This button is enabled when a tenant is selected from the tenant list.</em></li>
+</ul>
+<p><strong>NOTE:</strong> The <code>Accounting System</code> selections are initially empty. You must enter your <code>Tenant ID</code> and <code>Tenant PIN</code> and then click on the <code>Download Updates</code> button to retrieve the available accounting system configuration files for your company ID. Once the download completes, the <code>Accounting System</code> selections will be populated with the available selections.</p>
+<p>You can click on the <code>Download Updates</code> button any time that you need to check for updated accounting system configuration files.</p>
+<img src="./images/accountInformation.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="databaseConnections"></a></p>
+<h3 id="database-connections">Database Connections</h3>
+<p>The <strong>Database Connections</strong> tab is used to define the databases to use in the export process:</p>
+<ul>
+<li><code>Tenant</code>: This dropdown will display all the tenants added in the account information configuration page. First tenant will be selected by default. Select the desired tenant from the list.</li>
+<li><code>Database Server</code>: Enter your database server address (if applicable)</li>
+<li><code>Database Name</code> or <code>DSN Name</code>: Enter the database or DSN name</li>
+<li><code>Add</code>: Click this button to add the database to the list of defined databases. <em>This button is enabled when a name is entered for the database.</em></li>
+<li><code>Remove</code>: Click this button to remove the selected database from the list of defined databases. <em>This button is enabled when a database is selected in the list of defined databases.</em></li>
+<li><code>Username</code>: Enter the username for authentication (if applicable)</li>
+<li><code>Password</code>: Enter the password for authentication (if applicable)</li>
+<li><code>Test Connection</code>: Click this button to verify the connection settings for the selected database. <em>This button is enabled when a database is selected in the list of defined databases.</em></li>
+</ul>
+<img src="./images/databaseConnections.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="dataExport"></a></p>
+<h3 id="data-export">Data Export</h3>
+<p>The <strong>Data Export</strong> tab is used to select the coding values used in the export process:</p>
+<ul>
+<li><code>Tenant</code>: This dropdown will display all the tenants added in the account information configuration page. First tenant will be selected by default. Select the desired tenant from the list.</li>
+<li><code>Database</code>: This dropdown will display the databases added for the selected tenant. Select the database to use for selecting the coding values</li>
+<li><code>Select your data</code>: Select the coding type to use for selecting the coding value</li>
+<li><code>Select All</code>: Click this button to select all coding values in the list</li>
+<li><code>Unselect All</code>: Click this button to unselect all coding values in the list</li>
+<li>Coding values: Check / select each of the coding values to export for the current selected coding type.</li>
+</ul>
+<p>The available databases are defined in the <a href="#databaseConnections">Database Connections</a> tab.</p>
+<p>The coding types are defined in the accounting system configuration file that is selected on the <a href="#accountInformation">Account Information</a> tab.</p>
+<p>The coding values that you select on this tab are used to filter the data during the export process.</p>
+<p><strong>NOTE</strong> that the selected coding values are associated with the selected database. If you have multiple databases defined then you must select coding values for each coding type for each database.</p>
+<img src="./images/dataExport.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="customProperties"></a></p>
+<h3 id="custom-properties">Custom Properties</h3>
+<p>The <strong>Custom Properties</strong> tab is used to define any additional application properties:</p>
+<ul>
+<li><code>Edit</code>: Click this button to modify the value for the selected property. <em>This button is enabled when a property is selected.</em></li>
+<li><code>Reset</code>: Click this button to reset the value for the selected property to its default value. <em>This button is enabled when a property is selected.</em></li>
+<li><code>Reset All Properties</code>: Click this button to reset all of the listed custom properties to their default values.</li>
+</ul>
+<p>Application-wide properties have a ‘app.’ prefix. Please consult with your Comdata customer support representative before changing any of these properties.</p>
+<img src="./images/customProperties.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="export"></a></p>
+<h2 id="export">Export</h2>
+<p>Clicking on the <strong>Export</strong> button on the <a href="#dashboard.html">Dashboard</a> starts the export operation. The export process will export data for all the configured tenants sequentially in a single run. When the export operation is running, the <code>Status</code> field of the <a href="recentExportStatus.html">Recent Export Status</a> display is set to <strong>RUNNING</strong> and will flash until completed. When the export operation completes, the <code>Status</code> field of the <a href="recentExportStatus">Recent Export Status</a> display is set to either <strong>SUCCESS</strong> or <strong>ERROR</strong> depending on the result.</p>
+<p>You can view the details of all completed export operations by clicking on one of the entries in the <a href="#exportHistory">Export History</a> display.</p>
+<strong>NOTE:</strong> Only one export operation can be running at a time.<br />
+<p style="page-break-before:always;">
+</p>
+<p><a name="customerSupport"></a></p>
+<h2 id="customer-support">Customer Support</h2>
+<p>Clicking on the <strong>Customer Support</strong> button on the <a href="#dashboard">Dashboard</a> displays the customer support panel where you can collect application information to send to your customer support representative. This information will assist in resolving any issues that you may be having with the export tool.</p>
+<ul>
+<li><code>Application Configuration File</code>: The current configuration settings for the application.</li>
+<li><code>Accounting System Configuration Files</code>: The set of accounting system configuration files downloaded on the <a href="#accountInformation">Account Information</a> configuration tab.</li>
+<li><code>Application Log File</code>: The application log file.</li>
+<li><code>Export Log File</code>: The log file from the most recent export operations.</li>
+<li><code>Export History Files</code>: The analytics result files from the most recent export operations.</li>
+<li><code>System Information</code>: Information about your computer system, system components, memory, disk space, etc.</li>
+</ul>
+<p>After clicking the <code>Save</code> button, a zip file will be created containing the selected information. You should send that zip file to your customer support representative to assist in resolving any issues.</p>
+<img src="./images/customerSupport.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="notifications-windows"></a></p>
+<h2 id="notifications-windows">Notifications (Windows)</h2>
+<p>The application generates the following system application event notifications:</p>
+<h3 id="comdata-export-sync-tool">Comdata Export Sync Tool</h3>
+<p>Upon completion of each export operation, an event is created in the Windows application log.</p>
+<p><strong>NOTE:</strong> The event is only created when the export process is running with elevated privileges.</p>
+<p>The possible values contained in the event include:</p>
+<ul>
+<li>Source: Comdata Export Sync Tool</li>
+<li>Level: Information</li>
+<li>Event ID:
+<ul>
+<li>1 = successful</li>
+<li>999 = error</li>
+</ul></li>
+<li>Description: Contains the result and a reference to the analytics file</li>
+</ul>
+<img src="./images/eventViewer.png" />
+<p style="page-break-before:always;">
+</p>
+<p><a name="logging"></a></p>
+<h2 id="logging">Logging</h2>
+<p>Log files are located in <strong>Logs</strong> folder of the application data directory. There are three different log files generated by the application.</p>
+<h3 id="application-log">Application Log</h3>
+<p>The application log contains information about the activity of the application. This file is named <code>ExportSyncTool-Client.log</code> and is located in the <strong>Logs</strong> folder of the application data directory (e.g. <em>C:\ProgramData\Comdata\ExportSyncTool\Logs</em>).</p>
+<h3 id="export-log">Export Log</h3>
+<p>The export log contains information about the activity of the export operations. This file is named <code>ExportSyncTool-Export.log</code> and is located in the <strong>Logs</strong> folder of the application data directory (e.g. <em>C:\ProgramData\Comdata\ExportSyncTool\Logs</em>).</p>
+<h3 id="analytics-report">Analytics Report</h3>
+<p>The analytics report contains detailed analytics about each export operation. A separate file is generated for each export operation and is located in the **Logs* folder of the application data directory (e.g. <em>C:\ProgramData\Comdata\ExportSyncTool\Logs</em>).</p>
+<p style="page-break-before:always;">
+</p>
+<p><a name="softwareUpdates"></a></p>
+<h2 id="software-updates">Software Updates</h2>
+Updates to the application may occur from time to time. To check for updates to the current application installation, select <code>Check for updates</code> from the application <a href="#menu">menu</a>.
+<p style="page-break-before:always;">
+</p>
+<p><a name="scheduledTasks-windows"></a></p>
+<h2 id="scheduled-tasks-windows">Scheduled Tasks (Windows)</h2>
+<p>The export operation can be scheduled to run unattended at specific intervals. On Windows systems, this can be done using the Windows Task Scheduler.</p>
+<p>Follow these steps to create the scheduled task:</p>
+<p><strong>NOTE:</strong> <em>The screens are provided for illustration purposes. Your screens may appear differently depending on your version of Windows.</em></p>
+<ul>
+<li>Open Windows Task Scheduler</li>
+<li>Click <code>Create Task</code></li>
+</ul>
+<div class="figure">
+<img src="./images/taskSchedulerTask.png" />
+
+</div>
+<ul>
+<li><p>Enter the name for the task and select the security options. You should check <code>Run with highest privileges</code> if you require the Windows event <a href="#notifications-windows">notifications</a> to monitor the export process.</p></li>
+<li><p>Select the <code>Triggers</code> tab</p></li>
+</ul>
+<div class="figure">
+<img src="./images/taskSchedulerTriggers.png" />
+
+</div>
+<ul>
+<li>Click <code>New</code> to create a new trigger</li>
+</ul>
+<div class="figure">
+<img src="./images/taskSchedulerTrigger.png" />
+
+</div>
+<ul>
+<li>Set the trigger properties and click <code>OK</code></li>
+<li>Select the <code>Actions</code> tab</li>
+</ul>
+<div class="figure">
+<img src="./images/taskSchedulerAction.png" />
+
+</div>
+<ul>
+<li>Click <code>Browse...</code> and select the location of the <em>ExportSyncTool.exe</em> application.</li>
+<li>Enter <em>-silent -console</em> in the <code>Add arguments</code> text field.</li>
+<li>Enter the folder containing the <em>ExportSyncTool.exe</em> application in the <code>Start in</code> field.</li>
+<li>Click <code>OK</code></li>
+<li>Enter any additional settings in the <code>Conditions</code> and <code>Settings</code> tabs.</li>
+<li>Click <code>OK</code> to complete the creation of the scheduled task.</li>
+</ul>
+</body>
+</html>

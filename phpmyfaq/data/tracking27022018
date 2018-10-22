@@ -1,0 +1,4 @@
+32;new_session;0;::1;;http://localhost/comdata_prod/index.php?cmic=true;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36;1519737200;
+32;registration;0;::1;action=register;http://localhost/Comdata_Prod/phpmyfaq/index.php;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36;1519737203;
+32;registration;0;::1;action=register&gen=img&ck=1519737203;http://localhost/Comdata_Prod/phpmyfaq/?action=register;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36;1519737203;
+32;login;0;::1;action=login;http://localhost/Comdata_Prod/phpmyfaq/?action=register;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36;1519737206;

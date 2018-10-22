@@ -1,0 +1,6 @@
+14;new_session;0;::1;;http://localhost/Comdata_dev/index.php?Adding_Trading_Partner=true;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36;1513180693;
+14;registration;0;::1;action=register;http://localhost/Comdata_Prod/phpmyfaq/index.php;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36;1513180698;
+14;registration;0;::1;action=register&gen=img&ck=1513180698;http://localhost/Comdata_Prod/phpmyfaq/?action=register;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36;1513180698;
+14;login;0;::1;action=login;http://localhost/Comdata_Prod/phpmyfaq/?action=register;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36;1513180699;
+14;article_view;1;::1;action=artikel&cat=1&id=1&artlang=en&highlight=mis;http://localhost/Comdata_Prod/phpmyfaq/;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36;1513180705;
+15;new_session;0;::1;;http://localhost/Comdata_dev/index.php?viewpoint=true;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36;1513204122;

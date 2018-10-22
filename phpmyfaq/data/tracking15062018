@@ -1,0 +1,8 @@
+35;new_session;0;::1;;http://10.230.30.185/comdata_prod/index.php;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36;1529094984;
+35;login;0;::1;action=login;http://localhost/Comdata_Prod/phpmyfaq/index.php;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36;1529094988;
+35;fulltext_search;0;::1;action=search&search=e;http://localhost/Comdata_Prod/phpmyfaq/;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36;1529094997;
+35;fulltext_search;e;::1;action=search&search=e;http://localhost/Comdata_Prod/phpmyfaq/;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36;1529094997;
+35;article_view;2;::1;action=artikel&cat=1&id=2&artlang=en&highlight=e;http://localhost/Comdata_Prod/phpmyfaq/?action=search&search=e;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36;1529094999;
+35;fulltext_search;0;::1;action=search&search=e;http://localhost/Comdata_Prod/phpmyfaq/;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36;1529095005;
+35;fulltext_search;e;::1;action=search&search=e;http://localhost/Comdata_Prod/phpmyfaq/;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36;1529095005;
+35;login;0;::1;action=login;http://localhost/Comdata_Prod/phpmyfaq/index.php;Mozilla/5.0 (Windows NT 6.1, Win64, x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36;1529095006;
