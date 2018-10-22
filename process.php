@@ -32,6 +32,15 @@
 		};
 	};
 
+	function readDirecotries(){
+		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\';
+		$files1 = array_slice(scandir($dir),2);
+
+		for ($i = 0; $i < count($files1); $i++ ) {
+			echo '<label class="single_direcotry">' . ($files1[$i]) . '</label><br>';
+		};
+	};
+
 	if (isset($_POST['submit'])) 
 	{	
 		$uploaded_filename = $_FILES['the_file']['name'];

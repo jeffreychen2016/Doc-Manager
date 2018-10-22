@@ -110,7 +110,11 @@ $( document ).ready(function() {
 	$('#choose_file_btn').bind('change', function() { 
 		var fileName = ''; 
 		fileName = $(this).val(); 
-		$('#file_selected').html(fileName); 
+		if (fileName === '') {
+			$('#file_selected').html('No file selected'); 
+		} else {
+			$('#file_selected').html(fileName); 
+		};
 	});
 
 	$('#upload_btn').click(function(){

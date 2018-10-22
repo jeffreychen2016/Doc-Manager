@@ -118,3 +118,13 @@ input[type="file"] {
 #file_selected {
     display: block;
 }
+
+#categories {
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    overflow-y:scroll; 
+    text-align: left;
+}
+
