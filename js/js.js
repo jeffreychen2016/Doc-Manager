@@ -107,6 +107,12 @@ $( document ).ready(function() {
 	});
 
 	//pops up the upload window
+	$('#choose_file_btn').bind('change', function() { 
+		var fileName = ''; 
+		fileName = $(this).val(); 
+		$('#file_selected').html(fileName); 
+	});
+
 	$('#upload_btn').click(function(){
 		remove_iframe();
 		remove_SQL_convertor();

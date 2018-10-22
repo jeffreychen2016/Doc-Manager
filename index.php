@@ -79,7 +79,7 @@ include 'process.php';
 				 <input type="hidden" name="MAX_FILE_SIZE" value="300000">
 				 <p><input type="file" name="the_file" id="choose_file_btn"></p>
 				 <label for="choose_file_btn" class="btn btn-info">Please choose a file to upload</label>
-				 <span id="file_chosen_span">No file chosen</span>
+				 <span id="file_selected">No file chosen</span>
 				 <p><input type="submit" name="submit" value="Upload This File" id="upload_this_file"></p>
 				 <?php  
 				 	if (isset($_GET['msg'])) 
