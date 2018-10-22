@@ -85,6 +85,7 @@ include 'process.php';
 					 	readDirecotries();
 					 ?>
 				 </div>
+				 <span id="directory_selected">No directory selected</span>
 				 <p><input type="submit" name="submit" value="Upload This File" id="upload_this_file"></p>
 				 <?php  
 				 	if (isset($_GET['msg'])) 

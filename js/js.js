@@ -117,11 +117,18 @@ $( document ).ready(function() {
 		};
 	});
 
+	$(document).on('click','.single_direcotry',function(e){
+		var fileName = $(e.target).html();
+		var domString = 'Upload the file to this directory: ';
+		$('#directory_selected').html(domString + fileName); 
+	});
+
 	$('#upload_btn').click(function(){
 		remove_iframe();
 		remove_SQL_convertor();
 		$('#upload_window').css('display','block');
 		console.error('test');
 	});
+	
 });
 
