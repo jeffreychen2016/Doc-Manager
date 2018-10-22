@@ -69,6 +69,17 @@ body{
     cursor: pointer;
 }
 
+/*Iframe*/
+.iframe {
+    display: block;
+    position: fixed;
+    left: 50%;
+    margin-left: -35%;
+    width: 70%;
+    height: 85%;
+    text-align: center;
+}
+
 /*Text Area*/
 #SQL_convertor_container{
     width: 70%;

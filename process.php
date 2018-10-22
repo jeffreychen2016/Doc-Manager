@@ -6,13 +6,13 @@
 		{
 			$file = array_keys($_GET)[1];
 			$filename = $file . '.txt';		
-			echo "<div style = 'display:block;position:fixed;left:50%;margin-left:-35%;width:70%;height:85%;text-align: center;'><p style = 'display:block;margin-top:15%;font-size:1.5em;'>Your file is ready to be downloaded here:<br><a href='Default_Export_Templates/" . $filename . "' download>". $filename . "</a></p></div>";
+			echo "<div class='iframe'>Your file is ready to be downloaded here:<br><a href='Default_Export_Templates/" . $filename . "' download>". $filename . "</a></p></div>";
 		}
 		else
 		{
 			$file = key($_GET);
 			$filename = $file . '.pdf';
-			echo '<iframe src="docs/' . $filename . '"' . ' style = "display:block;position:fixed;left:50%;margin-left:-35%;width:70%;height:85%;"></iframe>';
+			echo '<iframe class="iframe" src="docs/' . $filename . '"' . '></iframe>';
 		}
 	}
 
