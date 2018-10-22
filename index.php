@@ -14,7 +14,6 @@ include 'process.php';
 					<a class="navbar-brand" href="#">Docs Storage</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Export Guide<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="index.php?sage=true" class="open-pdf-iframe">Sage</a></li>
@@ -24,59 +23,6 @@ include 'process.php';
 							<li><a href="index.php?cgc=true" class="open-pdf-iframe">CGC</a></li>
 						</ul>
 					</li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ET Setup<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.php?ETloadexport=true" class="open-pdf-iframe">Export Setup</a></li>
-							<li><a href="index.php?ETcreatetenant=true" class="open-pdf-iframe">Tenant Creation</a></li>
-						</ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ET SQL<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.php?ET_SQL_CGC=true" class="open-pdf-iframe">CGC</a></li>
-							<li><a href="index.php?ET_SQL_Explorer=true" class="open-pdf-iframe">Explorer</a></li>
-							<li><a href="index.php?ET_SQL_Sage300=true" class="open-pdf-iframe">Sage300</a></li>
-							<li><a href="index.php?ET_SQL_Spectrum=true" class="open-pdf-iframe">Spectrum</a></li>
-							<li><a href="index.php?ET_SQL_Viewpoint=true" class="open-pdf-iframe">Viewpoint</a></li>
-						</ul>
-					</li>					
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sync Tool<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.php?Sync_Tool_User_Guide=true" class="open-pdf-iframe">Sync Tool Setup</a></li>
-							<li><a href="User_Guide/user_guide.html" class="open-pdf-iframe" target="_blank">Sync Tool User Guide</a></li>
-						</ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sterling Mapping<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.php?Adding_Trading_Partner=true" class="open-pdf-iframe">Adding Trading Partner</a></li>
-							<li><a href="index.php?Adding_User_Account=true" class="open-pdf-iframe">Adding User Account</a></li>
-							<li><a href="index.php?Map_Check-In=true" class="open-pdf-iframe">Map Check-In</a></li>
-							<li><a href="index.php?Receive_and_Route_Rules=true" class="open-pdf-iframe">Receive and Route Rules</a></li>
-							<li><a href="index.php?Export_From_QA_to_Cert=true" class="open-pdf-iframe">Export From QA to Cert</a></li>
-						</ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Integration<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.php?VC_Integration_Viewpoint=true" class="open-pdf-iframe">VC_Integration_Viewpoint</a></li>
-							<li><a href="index.php?Auto_Reconcile_Viewpoint=true" class="open-pdf-iframe">Auto_Reconcile_Viewpoint</a></li>
-							<li><a href="index.php?Setup_FTP_Viewpoint=true" class="open-pdf-iframe">Setup_FTP_Viewpoint</a></li>
-						</ul>
-					</li>					
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Other Useful Info<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.php?Pre-Sync_Email_Sample=true" class="open-pdf-iframe">Pre-Sync Email Sample</a></li>
-						</ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Default Export Templates<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.php?ET_Template=true&Viewpoint_Single_Header=true" class="open-pdf-iframe">Viewpoint-Single Header</a></li>
-							<li><a href="index.php?ET_Template=true&Spectrum_User_Vendor=true" class="open-pdf-iframe">Spectrum-User Vendor</a></li>
-							<li><a href="index.php?ET_Template=true&Spectrum_Single_Header=true" class="open-pdf-iframe">Spectrum-Single Header</a></li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -88,9 +34,9 @@ include 'process.php';
 					<li>
 						<a href=<?php getLinksForDownladingDocx() ?> class="sidebar-icon sidebar-icon-label" download><span class="glyphicon glyphicon-download-alt sidebar-icon"></span>Download</a>
 					</li>
-<!-- 					<li>
+					<li>
 						<a href="#" class="sidebar-icon sidebar-icon-label"><span class="glyphicon glyphicon-upload sidebar-icon" id="upload_btn"></span>Upload</a>
-					</li> -->
+					</li>
 					<li>
 						<a href="mailto:jchen@comdata.com" class="sidebar-icon sidebar-icon-label"><span class="glyphicon glyphicon-envelope sidebar-icon"></span>Email</a>
 					</li>
@@ -106,7 +52,6 @@ include 'process.php';
 			<a class="btn-open-side-bar">
 				<span class="glyphicon glyphicon-menu-hamburger"></span>
 			</a>
-			<!-- <iframe src="docs/sage.pdf" style="width:800px; height:500px;" frameborder="0"></iframe> -->
 			<!-- iframe section -->
  			<div id="iframe-container">
 				<?php
@@ -117,6 +62,7 @@ include 'process.php';
 				 ?>
 			</div>
 			<!-- iframe section end -->
+			<!-- SQL Convertor -->
 			<div id="SQL_convertor_container">
 				<textarea id="SQL_convertor_textarea"></textarea>
 				<label>Batch Number: </label><input type="text" name="" id="input_batch_number">
@@ -125,12 +71,15 @@ include 'process.php';
 				<input type="submit" name="submit" value="Copy" id="copy-btn">
 				<input type="submit" name="submit" value="Reverse->ET" id="reverse-btn">
 			</div>
+			<!-- SQL Convertor end -->
 		</div>
 		<div id="upload_window">
-			<form action="process.php" method="post" enctype="multipart/form-data">
+			<form action="process.php" method="post" enctype="multipart/form-data" id="file_upload_form">
 				 <p>Upload a file using this form:</p>
 				 <input type="hidden" name="MAX_FILE_SIZE" value="300000">
-				 <p><input type="file" name="the_file"></p>
+				 <p><input type="file" name="the_file" id="choose_file_btn"></p>
+				 <label for="choose_file_btn" class="btn btn-info">Please choose a file to upload</label>
+				 <span id="file_chosen_span">No file chosen</span>
 				 <p><input type="submit" name="submit" value="Upload This File" id="upload_this_file"></p>
 				 <?php  
 				 	if (isset($_GET['msg'])) 
@@ -144,7 +93,6 @@ include 'process.php';
 				 ?>
 			</form>
 		</div>
-
 
 		<div id="footer">
 			

@@ -106,13 +106,12 @@ $( document ).ready(function() {
 		$('#SQL_convertor_textarea').val(converted_string);
 	});
 
-	// //pops up the upload window
-	// $('#upload_btn').click(function(){
-	// 	remove_iframe();
-	// 	remove_SQL_convertor();
-	// 	$('#upload_window').css({'display' : 'unset', 'border' : '2px black solid' , 'display': 'block' , 'position' : 'absolute' ,
-	//      'width' : '300px', 'top':'40%','left': '50%','margin-left': '-150px' , 'background-color' :'white', 'transition' : '0.8s all'});
-	// })
-
+	//pops up the upload window
+	$('#upload_btn').click(function(){
+		remove_iframe();
+		remove_SQL_convertor();
+		$('#upload_window').css('display','block');
+		console.error('test');
+	});
 });
 
