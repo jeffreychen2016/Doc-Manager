@@ -1,20 +1,21 @@
 <?php
-// error_reporting(0);
-
-	function openPDF (){
+	// error_reporting(0);
+	function openPDF(){
 		if (isset($_GET['ET_Template']))
 		{
 			$file = array_keys($_GET)[1];
 			$filename = $file . '.txt';		
-			echo "<div style = 'display:block;position:fixed;left:50%;margin-left:-35%;width:70%;height:85%;text-align: center;'><p style = 'display:block;margin-top:15%;font-size:1.5em;'>Your file is ready to be downloaded here:<br><a href='Default_Export_Templates/" . $filename . "' download>". $filename . "</a></p></div>";
+			echo "<div class='iframe'>Your file is ready to be downloaded here:<br>
+							<a href='Default_Export_Templates/" . $filename . "' download>". $filename . "</a>
+						</div>";
 		}
 		else
 		{
 			$file = key($_GET);
 			$filename = $file . '.pdf';
-			echo '<iframe src="docs/' . $filename . '"' . ' style = "display:block;position:fixed;left:50%;margin-left:-35%;width:70%;height:85%;"></iframe>';
-		}
-	}
+			echo '<iframe class="iframe" src="docs/' . $filename . '"' . '></iframe>';
+		};
+	};
 
 	function getLinksForDownladingDocx(){
 		if (isset($_GET['ET_Template']))
@@ -28,13 +29,11 @@
 			$file = key($_GET);
 			$filename = $file . '.docx';
 			echo '"docs/' . $filename . '"';
-		}
-
-	}
+		};
+	};
 
 	if (isset($_POST['submit'])) 
 	{	
-		
 		$uploaded_filename = $_FILES['the_file']['name'];
 		$uploaded_file_extension = end(explode('.', $uploaded_filename));
 
@@ -57,7 +56,6 @@
 			}
 			else
 			{
-
 				print '<p>Your file could not be uploaded because: ';
 				//print a message based upon the error:
 				switch ($_FILES['the_file']['error']) 
@@ -82,13 +80,11 @@
 						break;
 				print '</p>';
 				} //end of move_uploaded_file() IF
-			} //end of submission IF		
-		} 
+			}; //end of submission IF		
+		}
 		else
 		{
 			print 'The file must be in .docx format!';
 		}//end of checking extension
-	}
-
-
+	};
 ?>

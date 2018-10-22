@@ -3,7 +3,7 @@ body{
 	padding: 0;
 }
 
-/*sidebar css*/
+/* -------------------------------------- sidebar css -------------------------------------- */
 .sidebar{
     float: left;
     width: 80px;
@@ -69,7 +69,18 @@ body{
     cursor: pointer;
 }
 
-/*Text Area*/
+/* -------------------------------------- Iframe -------------------------------------- */
+.iframe {
+    display: block;
+    position: fixed;
+    left: 50%;
+    margin-left: -35%;
+    width: 70%;
+    height: 85%;
+    text-align: center;
+}
+
+/* -------------------------------------- Text Area -------------------------------------- */
 #SQL_convertor_container{
     width: 70%;
     height: 85%;
@@ -88,7 +99,7 @@ body{
 }
 
 
-/*upload window*/
+/* -------------------------------------- upload window -------------------------------------- */
 #upload_window{
     display: none;
 }
