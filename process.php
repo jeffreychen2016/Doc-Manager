@@ -53,13 +53,13 @@
 		$domString = '';
 
 		for ($i = 0; $i < count($direcotries); $i++ ) {
-			$domString .= '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Export Guide<span class="caret"></span></a>';
+			$domString .= '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">' . $direcotries[$i] . '<span class="caret"></span></a>';
 			$domString .= 	'<ul class="dropdown-menu">';
 			$domString .=			'<li><a href="index.php?sage=true" class="open-pdf-iframe">Sage</a></li>';
 			$domString .= 	'</ul>';
 			$domString .= '</li>';
 		};
-		
+
 		echo $domString;
 	}
 
