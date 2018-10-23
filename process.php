@@ -23,7 +23,7 @@
 		$file = key($_GET);
 		echo 'file name:' . $file;
 		// echo '<iframe class="iframe" src="docs/'. $directoryName . '/' . $filename . '"' . '></iframe>';
-		echo '<iframe class="iframe" src="docs/'. 'default export template' . '/' . $file . '"' . '></iframe>';
+		echo '<iframe class="iframe" src="docs/'. 'category 1' . '/' . 'Salesforce' . '"' . '></iframe>';
 	};
 
 	function getLinksForDownladingDocx(){
@@ -76,7 +76,8 @@
 		$domString .= '<ul class="dropdown-menu">';
 
 		for ($i = 0; $i < count($files); $i++ ) {
-			$domString .=	'<li><a href="index.php?' . $files[$i] . '=true" class="open-pdf-iframe">' . $files[$i] . '</a></li>';
+			$fileNameWithoutExtension = pathinfo($files[$i],PATHINFO_FILENAME);
+			$domString .=	'<li><a href="index.php?' . $fileNameWithoutExtension . '=true" class="open-pdf-iframe">' . $files[$i] . '</a></li>';
 		}
 
 		$domString .= '</ul>';
