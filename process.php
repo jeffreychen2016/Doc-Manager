@@ -66,7 +66,7 @@
 		if (isset($_POST['submit'])) 
 		{	
 			$target_dir = 'C:\\xampp\htdocs\\Comdata_Prod\\docs\\' . $_POST['file_destination_dropdown'] . '\\';
-			$target_file = $target_dir . basename($_FILES["the_file"]["name"]);
+			$target_file = $target_dir . str_replace('_','-',basename($_FILES["the_file"]["name"]));
 			$message = 0;
 	
 			if (move_uploaded_file($_FILES["the_file"]["tmp_name"], $target_file)) {
