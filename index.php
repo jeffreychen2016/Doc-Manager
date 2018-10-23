@@ -14,7 +14,7 @@ include 'process.php';
 					<a class="navbar-brand" href="#">Docs Storage</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Export Guide<span class="caret"></span></a>
+					<!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Export Guide<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="index.php?sage=true" class="open-pdf-iframe">Sage</a></li>
 							<li><a href="index.php?viewpoint=true" class="open-pdf-iframe">ViewPoint</a></li>
@@ -22,7 +22,10 @@ include 'process.php';
 							<li><a href="index.php?cmic=true" class="open-pdf-iframe">CMiC</a></li>
 							<li><a href="index.php?cgc=true" class="open-pdf-iframe">CGC</a></li>
 						</ul>
-					</li>
+					</li> -->
+					<?php
+						generatingDirectoriesInNav();
+					?>
 				</ul>
 			</div>
 		</nav>
@@ -57,7 +60,9 @@ include 'process.php';
 				<?php
 					if (!empty(key($_GET)) && (key($_GET) != 'msg')) 
 					{
-						openPDF();
+						// (key($_GET) = file name without extension
+						// it is the one in url filename=true
+						openPDF(key($_GET));
 					}
 				 ?>
 			</div>
@@ -93,9 +98,11 @@ include 'process.php';
 				 		$response_code = $_GET['msg'];
 				 		if ($response_code == 1) 
 				 		{
-				 			print '<p>Your file was uploaded succesfully!</p>';
-				 		}
-					 }
+				 			print '<p class="success_message">Your file was uploaded succesfully!</p>';
+				 		} else {
+							print '<p class="failure_message">Something is broken, failed to upload!</p>';
+						}
+					}
 				 ?>
 			</form>
 		</div>

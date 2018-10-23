@@ -119,12 +119,11 @@ input[type="file"] {
     display: block;
 }
 
-#categories {
-    border: 2px solid black;
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    overflow-y:scroll; 
-    text-align: left;
+.success_message {
+    color: green;
+}
+
+.failure_message {
+    color: red;
 }
 
