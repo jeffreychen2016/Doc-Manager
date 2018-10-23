@@ -54,14 +54,26 @@
 
 		for ($i = 0; $i < count($direcotries); $i++ ) {
 			$domString .= '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">' . $direcotries[$i] . '<span class="caret"></span></a>';
-			$domString .= 	'<ul class="dropdown-menu">';
-			$domString .=			'<li><a href="index.php?sage=true" class="open-pdf-iframe">Sage</a></li>';
-			$domString .= 	'</ul>';
+			$domString .= generatingFilesInEachDirectory($direcotries[$i]);
 			$domString .= '</li>';
 		};
 
 		echo $domString;
-	}
+	};
+
+	function generatingFilesInEachDirectory($directoryName){
+		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\'. $directoryName . '\\';
+		$files = array_slice(scandir($dir),3);
+		$domString = '';
+		$domString .= '<ul class="dropdown-menu">';
+
+		for ($i = 0; $i < count($files); $i++ ) {
+			$domString .=	'<li><a href="index.php?sage=true" class="open-pdf-iframe">' . $files[$i] . '</a></li>';
+		}
+
+		$domString .= '</ul>';
+		return $domString;
+	};
 
 	if (isset($_POST['submit'])) 
 	{	
