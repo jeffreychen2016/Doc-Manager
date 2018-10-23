@@ -1,0 +1,21 @@
+SELECT 
+	DepartmentCode
+	,DepartmentCode + ' ' + DepartmentDescription AS Description
+FROM Department AS D
+,(SELECT ? AS CompanyCode) AS C
+,(SELECT LEFT(?, 2) AS Job) AS Job
+
+WHERE D.TenantID = 'JAYN'  
+AND D.CompanyCode = C.CompanyCode
+AND RIGHT(D.DepartmentDescription , 8) <> 'Inactive'
+AND D.DepartmentCode LIKE '%-%'
+AND ((Job.Job IN ('AR','FR','LR','NR','PR','CR','JR','AG','CG') 
+		AND RIGHT(D.DepartmentCode, 5) = '01-01')
+	OR (Job.Job IN ('PG') AND D.DepartmentCode = '01-07-01')
+	OR (Job.Job IN ('FG') AND D.DepartmentCode = '01-02-01')
+	OR (Job.Job IN ('LG') AND D.DepartmentCode = '01-04-01')
+	OR (Job.Job IN ('JG') AND D.DepartmentCode = '09-01-10')
+	OR (Job.Job IN ('JW') AND D.DepartmentCode = '09-01-11')
+        OR (Job.Job IN ('VG') AND D.DepartmentCode = '01-01-30')
+	OR (Job.Job NOT IN ('AR','FR','LR','NR','PR','CR','JR','AG','CG','PG','FG','LG','JG','JW','VG'))
+)

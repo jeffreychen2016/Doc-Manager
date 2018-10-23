@@ -62,7 +62,7 @@ include 'process.php';
 					{
 						// (key($_GET) = file name without extension
 						// it is the one in url filename=true
-						openPDF(key($_GET));
+						openPDF($_GET['directoryName'],$_GET['fileName']);
 					}
 				 ?>
 			</div>
