@@ -19,10 +19,10 @@
 	// 	};
 	// };
 
-	function openPDF($filename){
+	function openPDF($direcotry,$filename){
 		// the space in the filename is changed to _ (underscore) for some reason
 		// so in order to natch the file name, replace the _ with empty
-		echo '<iframe class="iframe" src="docs/'. 'category 1' . '/' . str_replace('_',' ',$filename) . '.pdf' . '"' . '></iframe>';
+		echo '<iframe class="iframe" src="docs/'. $direcotry . '/' . str_replace('_',' ',$filename) . '.pdf' . '"' . '></iframe>';
 	};
 
 	function getLinksForDownladingDocx(){
@@ -76,7 +76,9 @@
 
 		for ($i = 0; $i < count($files); $i++ ) {
 			$fileNameWithoutExtension = pathinfo($files[$i],PATHINFO_FILENAME);
-			$domString .=	'<li><a href="index.php?' . $fileNameWithoutExtension . '=true" class="open-pdf-iframe">' . $fileNameWithoutExtension . '</a></li>';
+			// add both direcotry name and file name to the url
+			// get click on the link, get request sent, the url will have both directory and file name for later retireving file back
+			$domString .=	'<li><a href="index.php?' . 'directoryName=' . $directoryName . '&' .'fileName=' . $fileNameWithoutExtension . '" class="open-pdf-iframe">' . $fileNameWithoutExtension . '</a></li>';
 		}
 
 		$domString .= '</ul>';
