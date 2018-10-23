@@ -60,7 +60,9 @@ include 'process.php';
 				<?php
 					if (!empty(key($_GET)) && (key($_GET) != 'msg')) 
 					{
-						openPDF();
+						// (key($_GET) = file name without extension
+						// it is the one in url filename=true
+						openPDF(key($_GET));
 					}
 				 ?>
 			</div>

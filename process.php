@@ -19,11 +19,10 @@
 	// 	};
 	// };
 
-	function openPDF(){
-		$file = key($_GET);
-		echo 'file name:' . $file;
-		// echo '<iframe class="iframe" src="docs/'. $directoryName . '/' . $filename . '"' . '></iframe>';
-		echo '<iframe class="iframe" src="docs/'. 'category 1' . '/' . 'Salesforce' . '"' . '></iframe>';
+	function openPDF($filename){
+		// the space in the filename is changed to _ (underscore) for some reason
+		// so in order to natch the file name, replace the _ with empty
+		echo '<iframe class="iframe" src="docs/'. 'category 1' . '/' . str_replace('_',' ',$filename) . '.pdf' . '"' . '></iframe>';
 	};
 
 	function getLinksForDownladingDocx(){
@@ -77,7 +76,7 @@
 
 		for ($i = 0; $i < count($files); $i++ ) {
 			$fileNameWithoutExtension = pathinfo($files[$i],PATHINFO_FILENAME);
-			$domString .=	'<li><a href="index.php?' . $fileNameWithoutExtension . '=true" class="open-pdf-iframe">' . $files[$i] . '</a></li>';
+			$domString .=	'<li><a href="index.php?' . $fileNameWithoutExtension . '=true" class="open-pdf-iframe">' . $fileNameWithoutExtension . '</a></li>';
 		}
 
 		$domString .= '</ul>';
