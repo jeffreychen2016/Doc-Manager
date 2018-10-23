@@ -80,7 +80,7 @@ include 'process.php';
 		</div>
 		<div id="upload_window">
 			<form action="process.php" method="post" enctype="multipart/form-data" id="file_upload_form">
-				 <p>Upload a file using this form:</p>
+				 <h1>Upload your file using this form:</h1>
 				 <input type="hidden" name="MAX_FILE_SIZE" value="300000">
 				 <p><input type="file" name="the_file" id="choose_file_btn"></p>
 				 <label for="choose_file_btn" class="btn btn-info">Please choose a file to upload</label>

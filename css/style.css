@@ -119,6 +119,10 @@ input[type="file"] {
     display: block;
 }
 
+#file_destination {
+    margin-top: 10px;
+}
+
 .success_message {
     color: green;
 }
