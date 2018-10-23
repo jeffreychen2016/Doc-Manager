@@ -14,7 +14,7 @@ include 'process.php';
 					<a class="navbar-brand" href="#">Docs Storage</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Export Guide<span class="caret"></span></a>
+					<!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Export Guide<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="index.php?sage=true" class="open-pdf-iframe">Sage</a></li>
 							<li><a href="index.php?viewpoint=true" class="open-pdf-iframe">ViewPoint</a></li>
@@ -22,7 +22,10 @@ include 'process.php';
 							<li><a href="index.php?cmic=true" class="open-pdf-iframe">CMiC</a></li>
 							<li><a href="index.php?cgc=true" class="open-pdf-iframe">CGC</a></li>
 						</ul>
-					</li>
+					</li> -->
+					<?php
+						generatingDirectoriesInNav();
+					?>
 				</ul>
 			</div>
 		</nav>
