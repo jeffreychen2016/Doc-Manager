@@ -36,10 +36,15 @@
 	function readDirecotries(){
 		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\';
 		$files1 = array_slice(scandir($dir),2);
+		$domString = '';
+		$domString .= '<select id="file_destination">';
 
 		for ($i = 0; $i < count($files1); $i++ ) {
-			echo '<label class="single_direcotry">' . ($files1[$i]) . '</label><br>';
+			$domString .= '<option value="' . $files1[$i] . '">' . ($files1[$i]) . '</option>';
 		};
+
+		$domString .= '</select>';
+		echo $domString;
 	};
 
 	// function validateFileFormat(file) {

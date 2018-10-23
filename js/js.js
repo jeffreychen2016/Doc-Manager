@@ -117,8 +117,8 @@ $( document ).ready(function() {
 		};
 	});
 
-	$(document).on('click','.single_direcotry',function(e){
-		var fileName = $(e.target).html();
+	$(document).on('change','#file_destination',function(e){
+		var fileName = $(e.target).val();
 		var domString = 'Upload the file to this directory: ';
 		$('#directory_selected').html(domString + fileName); 
 	});
