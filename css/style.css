@@ -119,3 +119,11 @@ input[type="file"] {
     display: block;
 }
 
+.success_message {
+    color: green;
+}
+
+.failure_message {
+    color: red;
+}
+

@@ -93,9 +93,11 @@ include 'process.php';
 				 		$response_code = $_GET['msg'];
 				 		if ($response_code == 1) 
 				 		{
-				 			print '<p>Your file was uploaded succesfully!</p>';
-				 		}
-					 }
+				 			print '<p class="success_message">Your file was uploaded succesfully!</p>';
+				 		} else {
+							print '<p class="failure_message">Something is broken, failed to upload!</p>';
+						}
+					}
 				 ?>
 			</form>
 		</div>

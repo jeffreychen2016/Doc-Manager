@@ -47,19 +47,17 @@
 		echo $domString;
 	};
 
-	// function validateFileFormat(file) {
-
-	// };
-
 	if (isset($_POST['submit'])) 
 	{	
 		$target_dir = 'C:\\xampp\htdocs\\Comdata_Prod\\docs\\' . $_POST['file_destination_dropdown'] . '/';
 		$target_file = $target_dir . basename($_FILES["the_file"]["name"]);
+		$message = 0;
 		// $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if (move_uploaded_file($_FILES["the_file"]["tmp_name"], $target_file)) {
-			echo "The file ". basename( $_FILES["the_file"]["name"]). " has been uploaded.";
+			$message = 1;
 		} else {
-			echo "Sorry, there was an error uploading your file.";
+			$message = 0;
 		};
+		header('Location: index.php?msg=' . $message); 
 	};
 ?>
