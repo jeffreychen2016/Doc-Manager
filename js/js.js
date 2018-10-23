@@ -107,7 +107,13 @@ $( document ).ready(function() {
 	});
 
 	//pops up the upload window
-	$('#choose_file_btn').bind('change', function() { 
+	$('#upload_btn').click(function(){
+		remove_iframe();
+		remove_SQL_convertor();
+		$('#upload_window').css('display','block');
+	});
+
+	$(document).on('change','#choose_file_btn',  function(){ 
 		var fileName = ''; 
 		fileName = $(this).val(); 
 		if (fileName === '') {
@@ -122,13 +128,5 @@ $( document ).ready(function() {
 		var domString = 'Upload the file to this directory: ';
 		$('#directory_selected').html(domString + fileName); 
 	});
-
-	$('#upload_btn').click(function(){
-		remove_iframe();
-		remove_SQL_convertor();
-		$('#upload_window').css('display','block');
-		console.error('test');
-	});
-	
 });
 
