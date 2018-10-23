@@ -1,21 +1,29 @@
 <?php
 	// error_reporting(0);
+	// function openPDF(){
+	// 	if (isset($_GET['ET_Template']))
+	// 	{
+	// 		$file = array_keys($_GET)[1];
+	// 		$filename = $file . '.txt';		
+	// 		echo "<div class='iframe'>Your file is ready to be downloaded here:<br>
+	// 						<a href='Default_Export_Templates/" . $filename . "' download>". $filename . "</a>
+	// 					</div>";
+	// 	}
+	// 	else
+	// 	{
+	// 		$file = key($_GET);
+	// 		$filename = $file . '.pdf';
+	// 		echo 'file name:' . $filename;
+	// 		// echo '<iframe class="iframe" src="docs/'. $directoryName . '/' . $filename . '"' . '></iframe>';
+	// 		echo '<iframe class="iframe" src="docs/'. 'default export template' . '/' . $filename . '"' . '></iframe>';
+	// 	};
+	// };
+
 	function openPDF(){
-		if (isset($_GET['ET_Template']))
-		{
-			$file = array_keys($_GET)[1];
-			$filename = $file . '.txt';		
-			echo "<div class='iframe'>Your file is ready to be downloaded here:<br>
-							<a href='Default_Export_Templates/" . $filename . "' download>". $filename . "</a>
-						</div>";
-		}
-		else
-		{
-			$file = key($_GET);
-			$filename = $file . '.pdf';
-			// echo '<iframe class="iframe" src="docs/' . $filename . '"' . '></iframe>';
-			echo '<iframe class="iframe" src="docs/Example.pdf"></iframe>';
-		};
+		$file = key($_GET);
+		echo 'file name:' . $file;
+		// echo '<iframe class="iframe" src="docs/'. $directoryName . '/' . $filename . '"' . '></iframe>';
+		echo '<iframe class="iframe" src="docs/'. 'default export template' . '/' . $file . '"' . '></iframe>';
 	};
 
 	function getLinksForDownladingDocx(){
@@ -63,12 +71,12 @@
 
 	function generatingFilesInEachDirectory($directoryName){
 		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\'. $directoryName . '\\';
-		$files = array_slice(scandir($dir),3);
+		$files = array_slice(scandir($dir),2);
 		$domString = '';
 		$domString .= '<ul class="dropdown-menu">';
 
 		for ($i = 0; $i < count($files); $i++ ) {
-			$domString .=	'<li><a href="index.php?sage=true" class="open-pdf-iframe">' . $files[$i] . '</a></li>';
+			$domString .=	'<li><a href="index.php?' . $files[$i] . '=true" class="open-pdf-iframe">' . $files[$i] . '</a></li>';
 		}
 
 		$domString .= '</ul>';
@@ -77,7 +85,7 @@
 
 	if (isset($_POST['submit'])) 
 	{	
-		$target_dir = 'C:\\xampp\htdocs\\Comdata_Prod\\docs\\' . $_POST['file_destination_dropdown'] . '/';
+		$target_dir = 'C:\\xampp\htdocs\\Comdata_Prod\\docs\\' . $_POST['file_destination_dropdown'] . '\\';
 		$target_file = $target_dir . basename($_FILES["the_file"]["name"]);
 		$message = 0;
 
