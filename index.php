@@ -14,15 +14,6 @@ include 'process.php';
 					<a class="navbar-brand" href="#">Docs Storage</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Export Guide<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.php?sage=true" class="open-pdf-iframe">Sage</a></li>
-							<li><a href="index.php?viewpoint=true" class="open-pdf-iframe">ViewPoint</a></li>
-							<li><a href="index.php?spectrum=true" class="open-pdf-iframe">Spectrum</a></li>
-							<li><a href="index.php?cmic=true" class="open-pdf-iframe">CMiC</a></li>
-							<li><a href="index.php?cgc=true" class="open-pdf-iframe">CGC</a></li>
-						</ul>
-					</li> -->
 					<?php
 						generatingDirectoriesInNav();
 					?>
@@ -105,6 +96,19 @@ include 'process.php';
 					}
 				 ?>
 			</form>
+		</div>
+		<h2 id="doc_manager_title">Doc Manager</h2>
+		<div id="doc_manager_wrapper">
+			<div id="directory_manager">
+				<form action="process.php" method="post" enctype="multipart/form-data" id="file_upload_form">
+				</form>
+			</div>
+			<div id="arrow_sign">
+					
+			</div>
+			<div id="file_manager">
+			
+			</div>
 		</div>
 
 		<div id="footer">

@@ -108,7 +108,7 @@ body{
 
 #file_upload_form{ 
     text-align: center;
-    margin-top: 30%;
+    margin-top: 15%;
 }
 
 input[type="file"] {
@@ -131,3 +131,31 @@ input[type="file"] {
     color: red;
 }
 
+/* -------------------------------------- Doc Manager  -------------------------------------- */
+#doc_manager_title {
+    text-align: center;
+}
+
+#doc_manager_wrapper {
+    width: 50%;
+    border: 2px black solid;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    height: 300px;
+}
+
+#directory_manager {
+    width: 35%;
+    border: 2px red solid;
+}
+
+#file_manager {
+    width: 35%;
+    border: 2px red solid;
+}
+
+#arrow_sign {
+    width: 20%;
+    border: 2px red solid;
+}
