@@ -107,9 +107,9 @@ include 'process.php';
 					?>
 				</form>
 				<div class="doc_manager_btn_group">
-					<button type="button" class="btn btn-primary">Primary</button>
-					<button type="button" class="btn btn-primary">Primary</button>
-					<button type="button" class="btn btn-primary">Primary</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button>
+					<button type="button" class="btn btn-primary">Edit</button>
+					<button type="button" class="btn btn-primary">Delete</button>
 				</div>
 			</div>
 			
@@ -123,7 +123,7 @@ include 'process.php';
 
 				</form>
 				<div class="doc_manager_btn_group">
-					<button type="button" class="btn btn-primary">Primary</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Primary</button>
 					<button type="button" class="btn btn-primary">Primary</button>
 					<button type="button" class="btn btn-primary">Primary</button>
 				</div>
@@ -133,16 +133,37 @@ include 'process.php';
 		<div id="footer">
 			
 		</div>
+		<!-- Create Directory Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<form action="process.php" method="post">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Add Directory</h4>
+						</div>
+						<div class="modal-body">
+							<label for="add_directory_name">Directory Name</label>
+							<input type="text" id="add_directory_name" name="directory_name">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<input type="submit" class="btn btn-primary" value="Add Directory"></input>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 
 
 	<!--CSS,JQuery,JS -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/js.js"></script>	  
