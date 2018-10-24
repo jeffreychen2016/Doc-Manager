@@ -18,7 +18,7 @@
 	};
 
 	function getDirectories(){
-		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\';
+		$dir = '.\\docs\\';
 		$directories = array_slice(scandir($dir),2);
 
 		return $directories;
@@ -51,7 +51,7 @@
 	};
 
 	function generatingFilesInEachDirectory($directoryName){
-		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\'. $directoryName . '\\';
+		$dir = '.\\docs\\'. $directoryName . '\\';
 		$files = array_slice(scandir($dir),2);
 		$domString = '';
 		$domString .= '<ul class="dropdown-menu">';
