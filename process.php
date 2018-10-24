@@ -97,5 +97,12 @@
 		};
 	};
 
+	function createNewDirectory(){
+		if (isset($_POST['submit'])) {
+			echo '123';
+		}
+	}
+
 	uploadFile();
+	createNewDirectory();
 ?>

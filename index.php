@@ -135,7 +135,7 @@ include 'process.php';
 		</div>
 		<!-- Create Directory Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<form action="process.php" method="post">
+			<form action="test.php" method="post">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
