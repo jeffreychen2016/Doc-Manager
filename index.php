@@ -100,14 +100,31 @@ include 'process.php';
 		<h2 id="doc_manager_title">Doc Manager</h2>
 		<div id="doc_manager_wrapper">
 			<div id="directory_manager">
-				<form action="process.php" method="post" enctype="multipart/form-data" id="file_upload_form">
+				<h3 class="sub_title">Directories</h3>
+				<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
+
 				</form>
+				<div class="doc_manager_btn_group">
+					<button type="button" class="btn btn-primary">Primary</button>
+					<button type="button" class="btn btn-primary">Primary</button>
+					<button type="button" class="btn btn-primary">Primary</button>
+				</div>
 			</div>
+			
 			<div id="arrow_sign">
 					
 			</div>
+
 			<div id="file_manager">
-			
+				<h3 class="sub_title">Files</h3>
+				<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
+
+				</form>
+				<div class="doc_manager_btn_group">
+					<button type="button" class="btn btn-primary">Primary</button>
+					<button type="button" class="btn btn-primary">Primary</button>
+					<button type="button" class="btn btn-primary">Primary</button>
+				</div>
 			</div>
 		</div>
 

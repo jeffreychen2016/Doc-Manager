@@ -142,7 +142,7 @@ input[type="file"] {
     margin: auto;
     display: flex;
     justify-content: space-evenly;
-    height: 300px;
+    height: 350px;
 }
 
 #directory_manager {
@@ -158,4 +158,22 @@ input[type="file"] {
 #arrow_sign {
     width: 20%;
     border: 2px red solid;
+}
+
+.sub_title {
+    display: block;
+    margin:0px;
+    max-height: 25px;
+    text-align: center;
+}
+
+#directory_manager_form {
+    border: 2px solid green;
+    height: 275px;
+}
+
+.doc_manager_btn_group {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
 }
