@@ -108,7 +108,7 @@ body{
 
 #file_upload_form{ 
     text-align: center;
-    margin-top: 30%;
+    margin-top: 15%;
 }
 
 input[type="file"] {
@@ -119,6 +119,10 @@ input[type="file"] {
     display: block;
 }
 
+#file_destination {
+    margin-top: 10px;
+}
+
 .success_message {
     color: green;
 }
@@ -127,3 +131,73 @@ input[type="file"] {
     color: red;
 }
 
+/* -------------------------------------- Doc Manager  -------------------------------------- */
+#doc_manager_title {
+    text-align: center;
+}
+
+#doc_manager_wrapper {
+    width: 50%;
+    border: 2px black solid;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    height: 350px;
+}
+
+#directory_manager {
+    width: 35%;
+    border: 2px red solid;
+}
+
+#file_manager {
+    width: 35%;
+    border: 2px red solid;
+}
+
+#arrow_sign {
+    width: 20%;
+    border: 2px red solid;
+}
+
+.sub_title {
+    display: block;
+    margin:0px;
+    max-height: 25px;
+    text-align: center;
+}
+
+#directory_manager_form {
+    border: 2px solid green;
+    height: 275px;
+}
+
+.doc_manager_btn_group {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.doc_manager_btn_group button {
+    width: 74px;
+}
+
+#doc_manager_dir_list {
+    list-style: none;
+    list-style-position:inside;
+}
+
+#doc_manager_dir_list,li { 
+    list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0; 
+}
+
+#doc_manager_dir_list a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    size: 2em;
+}

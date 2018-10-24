@@ -14,15 +14,6 @@ include 'process.php';
 					<a class="navbar-brand" href="#">Docs Storage</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Export Guide<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="index.php?sage=true" class="open-pdf-iframe">Sage</a></li>
-							<li><a href="index.php?viewpoint=true" class="open-pdf-iframe">ViewPoint</a></li>
-							<li><a href="index.php?spectrum=true" class="open-pdf-iframe">Spectrum</a></li>
-							<li><a href="index.php?cmic=true" class="open-pdf-iframe">CMiC</a></li>
-							<li><a href="index.php?cgc=true" class="open-pdf-iframe">CGC</a></li>
-						</ul>
-					</li> -->
 					<?php
 						generatingDirectoriesInNav();
 					?>
@@ -80,14 +71,14 @@ include 'process.php';
 		</div>
 		<div id="upload_window">
 			<form action="process.php" method="post" enctype="multipart/form-data" id="file_upload_form">
-				 <p>Upload a file using this form:</p>
+				 <h1>Upload your file using this form:</h1>
 				 <input type="hidden" name="MAX_FILE_SIZE" value="300000">
 				 <p><input type="file" name="the_file" id="choose_file_btn"></p>
 				 <label for="choose_file_btn" class="btn btn-info">Please choose a file to upload</label>
 				 <span id="file_selected">No file selected</span>
 				 <div id="categories">
 					 <?php
-					 	readDirecotries();
+						buildDomStringForDirectoryDropDown();
 					 ?>
 				 </div>
 				 <span id="directory_selected">No directory selected</span>
@@ -106,20 +97,73 @@ include 'process.php';
 				 ?>
 			</form>
 		</div>
+		<h2 id="doc_manager_title">Doc Manager</h2>
+		<div id="doc_manager_wrapper">
+			<div id="directory_manager">
+				<h3 class="sub_title">Directories</h3>
+				<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
+					<?php
+						listAllDirectories();
+					?>
+				</form>
+				<div class="doc_manager_btn_group">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button>
+					<button type="button" class="btn btn-primary">Edit</button>
+					<button type="button" class="btn btn-primary">Delete</button>
+				</div>
+			</div>
+			
+			<div id="arrow_sign">
+					
+			</div>
+
+			<div id="file_manager">
+				<h3 class="sub_title">Files</h3>
+				<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
+
+				</form>
+				<div class="doc_manager_btn_group">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Primary</button>
+					<button type="button" class="btn btn-primary">Primary</button>
+					<button type="button" class="btn btn-primary">Primary</button>
+				</div>
+			</div>
+		</div>
 
 		<div id="footer">
 			
+		</div>
+		<!-- Create Directory Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<form action="process.php" method="post">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Add Directory</h4>
+						</div>
+						<div class="modal-body">
+							<label for="add_directory_name">Directory Name</label>
+							<input type="text" id="add_directory_name" name="directory_name">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<input type="submit" class="btn btn-primary" value="Add Directory"></input>
+						</div>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 
 
 	<!--CSS,JQuery,JS -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/js.js"></script>	  
