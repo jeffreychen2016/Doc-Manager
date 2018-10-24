@@ -102,7 +102,9 @@ include 'process.php';
 			<div id="directory_manager">
 				<h3 class="sub_title">Directories</h3>
 				<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
-					
+					<?php
+						listAllDirectories();
+					?>
 				</form>
 				<div class="doc_manager_btn_group">
 					<button type="button" class="btn btn-primary">Primary</button>

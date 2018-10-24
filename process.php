@@ -67,6 +67,20 @@
 		return $domString;
 	};
 
+	function listAllDirectories(){
+		$directories = getDirectories();
+		$domString = '';
+		$domString .= '<ul id="doc_manager_dir_list">';
+
+		for ($i = 0; $i < count($directories); $i++ ) {
+			$domString .= '<li><a>' . $directories[$i] . '</a></li>';
+		};
+
+		$domString .= '</ul>';
+
+		echo $domString;
+	};
+
 	function uploadFile(){
 		if (isset($_POST['submit'])) 
 		{	

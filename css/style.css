@@ -177,3 +177,15 @@ input[type="file"] {
     display: flex;
     justify-content: space-evenly;
 }
+
+#doc_manager_dir_list {
+    list-style: none;
+    list-style-position:inside;
+}
+
+#doc_manager_dir_list,li { 
+    list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0; 
+}
