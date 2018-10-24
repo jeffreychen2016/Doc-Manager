@@ -17,14 +17,20 @@
 		}; 
 	};
 
-	function readDirecotries(){
+	function getDirectories(){
 		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\';
-		$files1 = array_slice(scandir($dir),2);
+		$directories = array_slice(scandir($dir),2);
+
+		return $directories;
+	};
+
+	function buildDomStringForDirectoryDropDown(){
+		$directories = getDirectories();
 		$domString = '';
 		$domString .= '<select id="file_destination" name="file_destination_dropdown">';
 
-		for ($i = 0; $i < count($files1); $i++ ) {
-			$domString .= '<option value="' . $files1[$i] . '">' . ($files1[$i]) . '</option>';
+		for ($i = 0; $i < count($directories); $i++ ) {
+			$domString .= '<option value="' . $directories[$i] . '">' . ($directories[$i]) . '</option>';
 		};
 
 		$domString .= '</select>';
@@ -32,13 +38,12 @@
 	};
 
 	function generatingDirectoriesInNav(){
-		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\';
-		$direcotries = array_slice(scandir($dir),2);
+		$directories = getDirectories();
 		$domString = '';
 
-		for ($i = 0; $i < count($direcotries); $i++ ) {
-			$domString .= '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">' . $direcotries[$i] . '<span class="caret"></span></a>';
-			$domString .= generatingFilesInEachDirectory($direcotries[$i]);
+		for ($i = 0; $i < count($directories); $i++ ) {
+			$domString .= '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">' . $directories[$i] . '<span class="caret"></span></a>';
+			$domString .= generatingFilesInEachDirectory($directories[$i]);
 			$domString .= '</li>';
 		};
 

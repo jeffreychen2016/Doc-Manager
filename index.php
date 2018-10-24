@@ -78,7 +78,7 @@ include 'process.php';
 				 <span id="file_selected">No file selected</span>
 				 <div id="categories">
 					 <?php
-					 	readDirecotries();
+						buildDomStringForDirectoryDropDown();
 					 ?>
 				 </div>
 				 <span id="directory_selected">No directory selected</span>
@@ -102,7 +102,7 @@ include 'process.php';
 			<div id="directory_manager">
 				<h3 class="sub_title">Directories</h3>
 				<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
-
+					
 				</form>
 				<div class="doc_manager_btn_group">
 					<button type="button" class="btn btn-primary">Primary</button>
