@@ -73,7 +73,7 @@
 		$domString .= '<ul id="doc_manager_dir_list">';
 
 		for ($i = 0; $i < count($directories); $i++ ) {
-			$domString .= '<li><a>' . $directories[$i] . '</a></li>';
+			$domString .= '<li><a name="' . $directories[$i] . '" value="' . $directories[$i] . '">' . $directories[$i] . '</a></li>';
 		};
 
 		$domString .= '</ul>';
@@ -103,6 +103,6 @@
 		}
 	}
 
-	uploadFile();
+	// uploadFile();
 	createNewDirectory();
 ?>
