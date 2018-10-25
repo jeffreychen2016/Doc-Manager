@@ -17,7 +17,7 @@ include 'process.php';
 					<?php
 						generatingDirectoriesInNav();
 					?>
-				</ul>
+				</ul>		
 			</div>
 		</nav>
 
@@ -29,7 +29,7 @@ include 'process.php';
 						<a href=<?php getLinksForDownladingDocx() ?> class="sidebar-icon sidebar-icon-label" download><span class="glyphicon glyphicon-download-alt sidebar-icon"></span>Download</a>
 					</li>
 					<li>
-						<a href="#" class="sidebar-icon sidebar-icon-label"><span class="glyphicon glyphicon-upload sidebar-icon" id="upload_btn"></span>Upload</a>
+						<a href="#" class="sidebar-icon sidebar-icon-label" id="upload_btn"><span class="glyphicon glyphicon-upload sidebar-icon"></span>Upload</a>
 					</li>
 					<li>
 						<a href="mailto:jchen@comdata.com" class="sidebar-icon sidebar-icon-label"><span class="glyphicon glyphicon-envelope sidebar-icon"></span>Email</a>
@@ -38,7 +38,7 @@ include 'process.php';
 						<a href="http://localhost/Comdata_Prod/phpmyfaq/index.php" class="sidebar-icon sidebar-icon-label" target="_blank"><span class="glyphicon glyphicon-question-sign sidebar-icon"></span>F.A.Q</a>
 					</li>
 					<li>
-						<a href="#" class="sidebar-icon sidebar-icon-label"><span class="glyphicon glyphicon-wrench sidebar-icon" id="SQL_convertor_btn"></span>SQL Convertor</a>
+						<a href="#" class="sidebar-icon sidebar-icon-label" id="SQL_convertor_btn"><span class="glyphicon glyphicon-wrench sidebar-icon"></span>SQL Convertor</a>
 					</li>
 					<!-- <li><a class="glyphicon glyphicon-envelope" href="mailto:jchen@comdata.com"></a></li> -->
 				</ul>
@@ -83,7 +83,7 @@ include 'process.php';
 				 </div>
 				 <span id="directory_selected">No directory selected</span>
 				 <p><input type="submit" name="submit" value="Upload This File" id="upload_this_file"></p>
-				 <?php  
+				 <?php 
 				 	if (isset($_GET['msg'])) 
 				 	{
 				 		$response_code = $_GET['msg'];
@@ -97,45 +97,48 @@ include 'process.php';
 				 ?>
 			</form>
 		</div>
-		<h2 id="doc_manager_title">Doc Manager</h2>
-		<div id="doc_manager_wrapper">
-			<div id="directory_manager">
-				<h3 class="sub_title">Directories</h3>
-				<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
-					<?php
-						listAllDirectories();
-					?>
-				</form>
-				<div class="doc_manager_btn_group">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button>
-					<button type="button" class="btn btn-primary">Edit</button>
-					<button type="button" class="btn btn-primary">Delete</button>
+		<div id="doc_manager_container">
+			<h2 id="doc_manager_title">Doc Manager</h2>
+			<div id="doc_manager_wrapper">
+				<div id="directory_manager">
+					<h3 class="sub_title">Directories</h3>
+					<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
+						<?php
+							listAllDirectories();
+						?>
+					</form>
+					<div class="doc_manager_btn_group">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button>
+						<button type="button" class="btn btn-primary">Edit</button>
+						<button type="button" class="btn btn-primary">Delete</button>
+					</div>
 				</div>
-			</div>
-			
-			<div id="arrow_sign">
-					
-			</div>
+				
+				<div id="arrow_sign">
+						
+				</div>
 
-			<div id="file_manager">
-				<h3 class="sub_title">Files</h3>
-				<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
+				<div id="file_manager">
+					<h3 class="sub_title">Files</h3>
+					<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
 
-				</form>
-				<div class="doc_manager_btn_group">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Primary</button>
-					<button type="button" class="btn btn-primary">Primary</button>
-					<button type="button" class="btn btn-primary">Primary</button>
+					</form>
+					<div class="doc_manager_btn_group">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Primary</button>
+						<button type="button" class="btn btn-primary">Primary</button>
+						<button type="button" class="btn btn-primary">Primary</button>
+					</div>
 				</div>
 			</div>
 		</div>
+
 
 		<div id="footer">
 			
 		</div>
 		<!-- Create Directory Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<form action="process.php" method="post">
+			<form action="process.php" method="post" id="create_directory_form">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -148,14 +151,14 @@ include 'process.php';
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary" value="Add Directory"></input>
+							<!-- <input type="submit" class="btn btn-primary" value="Add Directory"></input> -->
+							<button name="submit_directory_name" class="btn btn-primary" id="submit_file_name"></button>
 						</div>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
-
 
 	<!--CSS,JQuery,JS -->
 	<script

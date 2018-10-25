@@ -18,7 +18,7 @@
 	};
 
 	function getDirectories(){
-		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\';
+		$dir = '.\\docs\\';
 		$directories = array_slice(scandir($dir),2);
 
 		return $directories;
@@ -51,7 +51,7 @@
 	};
 
 	function generatingFilesInEachDirectory($directoryName){
-		$dir = 'C:\\xampp\\htdocs\\Comdata_Prod\\docs\\'. $directoryName . '\\';
+		$dir = '.\\docs\\'. $directoryName . '\\';
 		$files = array_slice(scandir($dir),2);
 		$domString = '';
 		$domString .= '<ul class="dropdown-menu">';
@@ -60,7 +60,7 @@
 			$fileNameWithoutExtension = pathinfo($files[$i],PATHINFO_FILENAME);
 			// add both direcotry name and file name to the url
 			// get click on the link, get request sent, the url will have both directory and file name for later retireving file back
-			$domString .=	'<li><a href="index.php?' . 'directoryName=' . $directoryName . '&' .'fileName=' . $fileNameWithoutExtension . '" class="open-pdf-iframe">' . $fileNameWithoutExtension . '</a></li>';
+			$domString .=	'<li class="open-pdf-iframe"><a href="index.php?' . 'directoryName=' . $directoryName . '&' .'fileName=' . $fileNameWithoutExtension . '">' . $fileNameWithoutExtension . '</a></li>';
 		}
 
 		$domString .= '</ul>';
@@ -84,7 +84,7 @@
 	function uploadFile(){
 		if (isset($_POST['submit'])) 
 		{	
-			$target_dir = 'C:\\xampp\htdocs\\Comdata_Prod\\docs\\' . $_POST['file_destination_dropdown'] . '\\';
+			$target_dir = '.\\docs\\' . $_POST['file_destination_dropdown'] . '\\';
 			$target_file = $target_dir . str_replace('_','-',basename($_FILES["the_file"]["name"]));
 			$message = 0;
 	
@@ -98,11 +98,11 @@
 	};
 
 	function createNewDirectory(){
-		if (isset($_POST['submit'])) {
-			echo '123';
+		if (isset($_POST['submit_directory_name'])) {
+			echo 'xxxxx';
 		}
 	}
 
-	// uploadFile();
+	uploadFile();
 	createNewDirectory();
 ?>
