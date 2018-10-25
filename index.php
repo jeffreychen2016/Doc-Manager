@@ -82,7 +82,7 @@ include 'process.php';
 					 ?>
 				 </div>
 				 <span id="directory_selected">No directory selected</span>
-				 <p><input type="submit" name="submit" value="Upload This File" id="upload_this_file"></p>
+				 <p><input type="submit" name="submit_upload_file" value="Upload This File" id="upload_this_file"></p>
 				 <?php 
 				 	if (isset($_GET['msg'])) 
 				 	{
@@ -152,7 +152,7 @@ include 'process.php';
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							<!-- <input type="submit" class="btn btn-primary" value="Add Directory"></input> -->
-							<button name="submit_directory_name" class="btn btn-primary" id="submit_file_name"></button>
+							<button name="submit_create_directory" class="btn btn-primary" id="submit_file_name"></button>
 						</div>
 					</div>
 				</div>

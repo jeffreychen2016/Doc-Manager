@@ -82,7 +82,7 @@
 	};
 
 	function uploadFile(){
-		if (isset($_POST['submit'])) 
+		if (isset($_POST['submit_upload_file'])) 
 		{	
 			$target_dir = '.\\docs\\' . $_POST['file_destination_dropdown'] . '\\';
 			$target_file = $target_dir . str_replace('_','-',basename($_FILES["the_file"]["name"]));
@@ -98,8 +98,10 @@
 	};
 
 	function createNewDirectory(){
-		if (isset($_POST['submit_directory_name'])) {
-			echo 'xxxxx';
+		if (isset($_POST['submit_create_directory'])) {
+			$directoryName = $_POST['directory_name'];
+			mkdir(".\\docs\\" . $directoryName, 0700, false);
+			header('Location: index.php'); 
 		}
 	}
 
