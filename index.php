@@ -83,7 +83,7 @@ include 'process.php';
 				 </div>
 				 <span id="directory_selected">No directory selected</span>
 				 <p><input type="submit" name="submit" value="Upload This File" id="upload_this_file"></p>
-				 <?php  
+				 <?php 
 				 	if (isset($_GET['msg'])) 
 				 	{
 				 		$response_code = $_GET['msg'];
@@ -138,7 +138,7 @@ include 'process.php';
 		</div>
 		<!-- Create Directory Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<form action="process.php" method="post">
+			<form action="process.php" method="post" id="create_directory_form">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -151,14 +151,14 @@ include 'process.php';
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary" value="Add Directory"></input>
+							<!-- <input type="submit" class="btn btn-primary" value="Add Directory"></input> -->
+							<button name="submit_directory_name" class="btn btn-primary" id="submit_file_name"></button>
 						</div>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
-
 
 	<!--CSS,JQuery,JS -->
 	<script

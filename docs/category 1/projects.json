@@ -1,0 +1,84 @@
+{
+  "projects": [
+    {
+      "projectId": 1,
+      "title": "Local Weather",
+      "thumbnail": "./imgs/local-weather.png",
+      "description": "This app is designed to view local weather for current day, next 3 days, and next 5 days...",
+      "technologiesUsed": "API, jQuery, AJAX and JSON, Task Automation, CSS Animations, Version Control with Github",
+      "available": true,
+      "url": "https://local-weather-19a90.firebaseapp.com",
+      "github": "https://github.com/jeffreychen2016/local-weather"
+    },
+    {
+      "projectId": 2,
+      "title": "Movie Maker",
+      "thumbnail": "./imgs/movie-maker.png",
+      "description": "This app is created to help movie producer determine if they will be able to make a movie given a certain budget and movie elements of choosing.",
+      "technologiesUsed": "jQuery, AJAX and JSON, Task Automation, CSS Animations, Version Control with Github",
+      "available": true,
+      "url": "https://movie-maker-97fae.firebaseapp.com",
+      "github": "https://github.com/jeffreychen2016/movie-maker"
+    },
+    {
+      "projectId": 3,
+      "title": "Ex-Tracker",
+      "thumbnail": "./imgs/ex-tracker.png",
+      "description": "This app is designed to avoid running into ex, so it needs to display a comprehensive list of all locations that ex frequents.",
+      "technologiesUsed": "API, jQuery, AJAX and JSON, Task Automation, CSS Animations, Version Control with Github",
+      "available": true,
+      "url": "https://ex-tracker-6d3ea.firebaseapp.com",
+      "github": "https://github.com/jeffreychen2016/ex-tracker"
+    },
+    {
+      "projectId": 4,
+      "title": "Ex-Tracker",
+      "thumbnail": "./imgs/ex-tracker.png",
+      "description": "This app is designed to avoid running into ex, so it needs to display a comprehensive list of all locations that ex frequents.",
+      "technologiesUsed": "API, jQuery, AJAX and JSON, Task Automation, CSS Animations, Version Control with Github",
+      "available": true,
+      "url": "https://ex-tracker-6d3ea.firebaseapp.com",
+      "github": "https://github.com/jeffreychen2016/ex-tracker"
+    },
+    {
+      "projectId": 5,
+      "title": "Ex-Tracker",
+      "thumbnail": "./imgs/ex-tracker.png",
+      "description": "This app is designed to avoid running into ex, so it needs to display a comprehensive list of all locations that ex frequents.",
+      "technologiesUsed": "API, jQuery, AJAX and JSON, Task Automation, CSS Animations, Version Control with Github",
+      "available": true,
+      "url": "https://ex-tracker-6d3ea.firebaseapp.com",
+      "github": "https://github.com/jeffreychen2016/ex-tracker"
+    },
+    {
+      "projectId": 6,
+      "title": "Ex-Tracker",
+      "thumbnail": "./imgs/ex-tracker.png",
+      "description": "This app is designed to avoid running into ex, so it needs to display a comprehensive list of all locations that ex frequents.",
+      "technologiesUsed": "API, jQuery, AJAX and JSON, Task Automation, CSS Animations, Version Control with Github",
+      "available": true,
+      "url": "https://ex-tracker-6d3ea.firebaseapp.com",
+      "github": "https://github.com/jeffreychen2016/ex-tracker"
+    },
+    {
+      "projectId": 7,
+      "title": "Ex-Tracker",
+      "thumbnail": "./imgs/ex-tracker.png",
+      "description": "This app is designed to avoid running into ex, so it needs to display a comprehensive list of all locations that ex frequents.",
+      "technologiesUsed": "API, jQuery, AJAX and JSON, Task Automation, CSS Animations, Version Control with Github",
+      "available": true,
+      "url": "https://ex-tracker-6d3ea.firebaseapp.com",
+      "github": "https://github.com/jeffreychen2016/ex-tracker"
+    },
+    {
+      "projectId": 8,
+      "title": "Local Weather",
+      "thumbnail": "./imgs/local-weather.png",
+      "description": "This app is designed to view local weather for current day, next 3 days, and next 5 days...",
+      "technologiesUsed": "API, jQuery, AJAX and JSON, Task Automation, CSS Animations, Version Control with Github",
+      "available": true,
+      "url": "https://local-weather-19a90.firebaseapp.com",
+      "github": "https://github.com/jeffreychen2016/local-weather"
+    }
+  ]
+}

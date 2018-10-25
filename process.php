@@ -84,7 +84,7 @@
 	function uploadFile(){
 		if (isset($_POST['submit'])) 
 		{	
-			$target_dir = 'C:\\xampp\htdocs\\Comdata_Prod\\docs\\' . $_POST['file_destination_dropdown'] . '\\';
+			$target_dir = '.\\docs\\' . $_POST['file_destination_dropdown'] . '\\';
 			$target_file = $target_dir . str_replace('_','-',basename($_FILES["the_file"]["name"]));
 			$message = 0;
 	
@@ -98,11 +98,11 @@
 	};
 
 	function createNewDirectory(){
-		if (isset($_POST['submit'])) {
-			echo '123';
+		if (isset($_POST['submit_directory_name'])) {
+			echo 'xxxxx';
 		}
 	}
 
-	// uploadFile();
+	uploadFile();
 	createNewDirectory();
 ?>

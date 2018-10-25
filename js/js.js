@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 
 	// on pageload, hide all modules other than PDF
-	remove_SQL_convertor();
-	remove_upload_window();
-	remove_doc_manager();
+	// remove_SQL_convertor();
+	// remove_upload_window();
+	// remove_doc_manager();
 
 	function remove_iframe(){
 		$('#iframe-container').css('display','none');
@@ -45,6 +45,10 @@ $( document ).ready(function() {
 		remove_SQL_convertor();
 		$('#upload_window').css('display','block');
 		$('#doc_manager_container').css('display','block');
+	});
+
+	$('#submit_file_name').on('click',function(){
+		$('#create_directory_form').submit();
 	});
 
 	//-- convert sql --//
