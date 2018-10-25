@@ -47,9 +47,13 @@ $( document ).ready(function() {
 		$('#doc_manager_container').css('display','block');
 	});
 
-	// $('#submit_file_name').on('click',function(){
-	// 	$('#create_directory_form').submit();
-	// });
+	$('.doc_mananger_directory').click(function(e){
+		var allDirectories = $('.doc_mananger_directory');
+		for (var i = 0; i < allDirectories.length; i++){
+			$(allDirectories[i]).removeAttr("name");
+		};
+		$(e.target).attr("name", $(e.target).html());
+	});
 
 	//-- convert sql --//
 	$('#convert-btn').click(function(){
@@ -139,6 +143,10 @@ $( document ).ready(function() {
 		var fileName = $(e.target).val();
 		var domString = 'Upload the file to this directory: ';
 		$('#directory_selected').html(domString + fileName); 
+	});
+
+	$(document).on('click','#delete_directory_btn',function(){
+		$('#directory_manager_form').submit();
 	});
 });
 

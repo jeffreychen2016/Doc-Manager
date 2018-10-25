@@ -110,7 +110,7 @@ include 'process.php';
 					<div class="doc_manager_btn_group">
 						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button>
 						<button type="button" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-primary">Delete</button>
+						<button type="button" class="btn btn-primary" id="delete_directory_btn">Delete</button>
 					</div>
 				</div>
 				
