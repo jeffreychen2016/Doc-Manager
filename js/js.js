@@ -47,9 +47,9 @@ $( document ).ready(function() {
 		$('#doc_manager_container').css('display','block');
 	});
 
-	$('#submit_file_name').on('click',function(){
-		$('#create_directory_form').submit();
-	});
+	// $('#submit_file_name').on('click',function(){
+	// 	$('#create_directory_form').submit();
+	// });
 
 	//-- convert sql --//
 	$('#convert-btn').click(function(){

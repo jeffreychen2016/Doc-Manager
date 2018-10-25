@@ -105,6 +105,10 @@
 		}
 	}
 
+	// function deleteDirectory(){
+
+	// }
+
 	uploadFile();
 	createNewDirectory();
 ?>

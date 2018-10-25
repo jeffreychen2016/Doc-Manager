@@ -151,8 +151,8 @@ include 'process.php';
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<!-- <input type="submit" class="btn btn-primary" value="Add Directory"></input> -->
-							<button name="submit_create_directory" class="btn btn-primary" id="submit_file_name"></button>
+							<input type="submit" class="btn btn-primary"  name="submit_create_directory" value="Add Directory"></input>
+							<!-- <button name="submit_create_directory" class="btn btn-primary" id="submit_file_name"></button> -->
 						</div>
 					</div>
 				</div>
