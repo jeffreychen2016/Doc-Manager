@@ -97,8 +97,8 @@ include 'process.php';
 				 ?>
 			</form>
 		</div>
-		<h2 id="doc_manager_title">Doc Manager</h2>
 		<div id="doc_manager_wrapper">
+			<h2 id="doc_manager_title">Doc Manager</h2>
 			<div id="directory_manager">
 				<h3 class="sub_title">Directories</h3>
 				<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">

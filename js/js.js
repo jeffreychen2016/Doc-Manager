@@ -14,7 +14,11 @@ $( document ).ready(function() {
 
     function remove_upload_window(){
     	$('#upload_window').css('display','none');
-    }
+		}
+		
+		function remove_doc_manager(){
+			$('#doc_manager_wrapper').css('display','none');	
+		}
 
     //-- Make sibe bar appear after win --//
     $( "iframe" ).after(function() {
