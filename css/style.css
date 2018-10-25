@@ -108,7 +108,6 @@ body{
 
 #file_upload_form{ 
     text-align: center;
-    margin-top: 15%;
 }
 
 input[type="file"] {
@@ -136,13 +135,19 @@ input[type="file"] {
     text-align: center;
 }
 
-#doc_manager_wrapper {
+#doc_manager_container {
+    display: block;
     width: 50%;
-    border: 2px black solid;
+    height: 350px;
     margin: auto;
+}
+
+#doc_manager_wrapper {
+    border: 2px black solid;
     display: flex;
     justify-content: space-evenly;
-    height: 350px;
+    height: 100%;
+    width: 100%;
 }
 
 #directory_manager {

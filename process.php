@@ -60,7 +60,7 @@
 			$fileNameWithoutExtension = pathinfo($files[$i],PATHINFO_FILENAME);
 			// add both direcotry name and file name to the url
 			// get click on the link, get request sent, the url will have both directory and file name for later retireving file back
-			$domString .=	'<li><a href="index.php?' . 'directoryName=' . $directoryName . '&' .'fileName=' . $fileNameWithoutExtension . '" class="open-pdf-iframe">' . $fileNameWithoutExtension . '</a></li>';
+			$domString .=	'<li class="open-pdf-iframe"><a href="index.php?' . 'directoryName=' . $directoryName . '&' .'fileName=' . $fileNameWithoutExtension . '">' . $fileNameWithoutExtension . '</a></li>';
 		}
 
 		$domString .= '</ul>';

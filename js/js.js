@@ -1,31 +1,32 @@
 $( document ).ready(function() {
 
-    // $('.open-pdf-iframe').click(function () {
-    // 	$(".side-bar-container").css('display','unset');		 
-    // });
+	// on pageload, hide all modules other than PDF
+	remove_SQL_convertor();
+	remove_upload_window();
+	remove_doc_manager();
 
-    function remove_iframe(){
-    	$('#iframe-container').css('display','none');
-    }
+	function remove_iframe(){
+		$('#iframe-container').css('display','none');
+	}
 
-    function remove_SQL_convertor(){
-    	$('#SQL_convertor_container').css('display','none');
-    }
+	function remove_SQL_convertor(){
+		$('#SQL_convertor_container').css('display','none');
+	}
 
-    function remove_upload_window(){
-    	$('#upload_window').css('display','none');
-		}
-		
-		function remove_doc_manager(){
-			$('#doc_manager_wrapper').css('display','none');	
-		}
+	function remove_upload_window(){
+		$('#upload_window').css('display','none');
+	}
+	
+	function remove_doc_manager(){
+		$('#doc_manager_container').css('display','none');	
+	}
 
-    //-- Make sibe bar appear after win --//
-    $( "iframe" ).after(function() {
-  		$('.side-bar-container').css('display','unset');
+	//-- Make sibe bar appear after win --//
+	$("iframe" ).after(function() {
+		$('.side-bar-container').css('display','unset');
 	});
 
-    //-- Toggle side bar --//
+  //-- Toggle side bar --//
 	$('.btn-open-side-bar').click(function(){
 		$('.sidebar').toggleClass('side');
 	});
@@ -33,9 +34,19 @@ $( document ).ready(function() {
 	//-- Pull up textarea --//
 	$('#SQL_convertor_btn').click(function(){
 		remove_iframe();
-		remove_upload_window()
+		remove_upload_window();
+		remove_doc_manager();
 		$('#SQL_convertor_container').css('display','unset');
 	});
+
+	//pops up the upload window
+	$('#upload_btn').click(function(){
+		remove_iframe();
+		remove_SQL_convertor();
+		$('#upload_window').css('display','block');
+		$('#doc_manager_container').css('display','block');
+	});
+
 	//-- convert sql --//
 	$('#convert-btn').click(function(){
 		var strings_to_be_tenant_id = /tenant_id\s{0,5}=\s{0,5}\d{0,5}/ig;
@@ -108,13 +119,6 @@ $( document ).ready(function() {
 		var converted_string = $('#SQL_convertor_textarea').val().replace(strings_to_be_found_base_underscore,'')
 		.replace(strings_to_be_found_second_join_key,'').replace(strings_to_be_found_batch_id,'WHERE ap.apexportbatch_id IN (^APExportBatchID^)').replace(strings_to_be_found_batch_id_equal,'WHERE ap.apexportbatch_id IN (^APExportBatchID^)');
 		$('#SQL_convertor_textarea').val(converted_string);
-	});
-
-	//pops up the upload window
-	$('#upload_btn').click(function(){
-		remove_iframe();
-		remove_SQL_convertor();
-		$('#upload_window').css('display','block');
 	});
 
 	$(document).on('change','#choose_file_btn',  function(){ 
