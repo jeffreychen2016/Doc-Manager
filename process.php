@@ -70,13 +70,14 @@
 	function listAllDirectories(){
 		$directories = getDirectories();
 		$domString = '';
-		$domString .= '<ul id="doc_manager_dir_list">';
+		$domString .= '<select name="selected_directory_to_delete" size="10" id="doc_manager_dir_list">';
 
 		for ($i = 0; $i < count($directories); $i++ ) {
-			$domString .= '<li><a class="doc_mananger_directory" name="' . $directories[$i] . '" value="' . $directories[$i] . '">' . $directories[$i] . '</a></li>';
+			// $domString .= '<li><a class="doc_mananger_directory" name="' . $directories[$i] . '" value="' . $directories[$i] . '">' . $directories[$i] . '</a></li>';
+			$domString .= '<option value="'. $directories[$i] . '">'. $directories[$i] . '</option>';
 		};
 
-		$domString .= '</ul>';
+		$domString .= '</select>';
 
 		echo $domString;
 	};
@@ -106,7 +107,16 @@
 	}
 
 	function deleteDirectory(){
-		if (isset($_POST['directory_manager_form'])) {
+		if (isset($_POST['selected_directory_to_delete'])) {
+			$path = '.\\docs\\' . $_POST['selected_directory_to_delete']; 
+			$files = glob($path . '/*');
+			//remove files in side the directory
+			foreach ($files as $file) {
+				is_dir($file) ? removeDirectory($file) : unlink($file);
+			}
+			//remove the directory itself
+			rmdir($path);
+
 			header('Location: index.php'); 
 		}
 	}
