@@ -73,7 +73,7 @@
 		$domString .= '<ul id="doc_manager_dir_list">';
 
 		for ($i = 0; $i < count($directories); $i++ ) {
-			$domString .= '<li><a name="' . $directories[$i] . '" value="' . $directories[$i] . '">' . $directories[$i] . '</a></li>';
+			$domString .= '<li><a class="doc_mananger_directory" name="' . $directories[$i] . '" value="' . $directories[$i] . '">' . $directories[$i] . '</a></li>';
 		};
 
 		$domString .= '</ul>';
@@ -82,7 +82,7 @@
 	};
 
 	function uploadFile(){
-		if (isset($_POST['submit'])) 
+		if (isset($_POST['submit_upload_file'])) 
 		{	
 			$target_dir = '.\\docs\\' . $_POST['file_destination_dropdown'] . '\\';
 			$target_file = $target_dir . str_replace('_','-',basename($_FILES["the_file"]["name"]));
@@ -98,11 +98,20 @@
 	};
 
 	function createNewDirectory(){
-		if (isset($_POST['submit_directory_name'])) {
-			echo 'xxxxx';
+		if (isset($_POST['submit_create_directory'])) {
+			$directoryName = $_POST['directory_name'];
+			mkdir(".\\docs\\" . $directoryName, 0700, false);
+			header('Location: index.php'); 
+		}
+	}
+
+	function deleteDirectory(){
+		if (isset($_POST['directory_manager_form'])) {
+			header('Location: index.php'); 
 		}
 	}
 
 	uploadFile();
 	createNewDirectory();
+	deleteDirectory();
 ?>
