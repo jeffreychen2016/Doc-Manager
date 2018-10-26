@@ -192,7 +192,7 @@ input[type="file"] {
 .doc_manager_btn_group button {
     width: 74px;
 }
-
+/* 
 #doc_manager_dir_list {
     list-style: none;
     list-style-position:inside;
@@ -211,4 +211,10 @@ input[type="file"] {
     text-decoration: none;
     cursor: pointer;
     size: 2em;
+} */
+
+#doc_manager_dir_list {
+    display: block;
+    width: 100%;
+    height: 100%;
 }

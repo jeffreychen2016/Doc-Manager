@@ -102,10 +102,11 @@ include 'process.php';
 			<div id="doc_manager_wrapper">
 				<div id="directory_manager">
 					<h3 class="sub_title">Directories</h3>
-					<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
+					<form action="process.php" method="post"  id="directory_manager_form">
 						<?php
 							listAllDirectories();
 						?>
+						<input type="text" name="directory_manager_form" hidden>
 					</form>
 					<div class="doc_manager_btn_group">
 						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button>
@@ -120,7 +121,7 @@ include 'process.php';
 
 				<div id="file_manager">
 					<h3 class="sub_title">Files</h3>
-					<form action="process.php" method="post" enctype="multipart/form-data" id="directory_manager_form">
+					<form action="process.php" method="post" enctype="multipart/form-data" id="xx">
 
 					</form>
 					<div class="doc_manager_btn_group">
