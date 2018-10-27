@@ -121,13 +121,15 @@ include 'process.php';
 
 				<div id="file_manager">
 					<h3 class="sub_title">Files</h3>
-					<form action="process.php" method="post" enctype="multipart/form-data" id="xx">
-
+					<form action="process.php" method="post"  id="file_manager_form">
+						<?php
+							listAllFiles();
+						?>
+						<input type="text" name="directory_manager_form" hidden>
 					</form>
 					<div class="doc_manager_btn_group">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Primary</button>
-						<button type="button" class="btn btn-primary">Primary</button>
-						<button type="button" class="btn btn-primary">Primary</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit</button>
+						<button type="button" class="btn btn-primary">Delete</button>
 					</div>
 				</div>
 			</div>

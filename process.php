@@ -121,6 +121,22 @@
 		}
 	}
 
+	function listAllFiles(){
+		$dir = '.\\docs\\Test';
+		$directories = array_slice(scandir($dir),2);
+		$domString = '';
+		$domString .= '<select name="selected_directory_to_delete" size="10" id="doc_manager_dir_list">';
+
+		for ($i = 0; $i < count($directories); $i++ ) {
+			// $domString .= '<li><a class="doc_mananger_directory" name="' . $directories[$i] . '" value="' . $directories[$i] . '">' . $directories[$i] . '</a></li>';
+			$domString .= '<option value="'. $directories[$i] . '">'. $directories[$i] . '</option>';
+		};
+
+		$domString .= '</select>';
+
+		echo $domString;
+	}
+
 	uploadFile();
 	createNewDirectory();
 	deleteDirectory();
