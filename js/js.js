@@ -150,7 +150,6 @@ $( document ).ready(function() {
 	});
 
 	$(document).on('click','.list_of_directory', function(e){
-		console.log($(e.target).val());
 		new Promise(function(resolve,reject){
 			$.ajax({
 				url: './process.php',
@@ -160,6 +159,10 @@ $( document ).ready(function() {
 				$('#file_manager_form').html(res);
 			});
 		})
+	});
+
+	$(document).on('click','#delete_file_btn',function(){
+		$('#file_manager_form').submit();
 	});
 });
 
