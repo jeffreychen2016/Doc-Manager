@@ -122,9 +122,7 @@ include 'process.php';
 				<div id="file_manager">
 					<h3 class="sub_title">Files</h3>
 					<form action="process.php" method="post"  id="file_manager_form">
-						<?php
-							listAllFiles();
-						?>
+
 						<input type="text" name="directory_manager_form" hidden>
 					</form>
 					<div class="doc_manager_btn_group">

@@ -148,5 +148,18 @@ $( document ).ready(function() {
 	$(document).on('click','#delete_directory_btn',function(){
 		$('#directory_manager_form').submit();
 	});
+
+	$(document).on('click','.list_of_directory', function(e){
+		console.log($(e.target).val());
+		new Promise(function(resolve,reject){
+			$.ajax({
+				url: './process.php',
+				data: {selectedDir: $(e.target).val()},
+				type: 'GET'
+			}).then((res) => {;
+				$('#file_manager_form').html(res);
+			});
+		})
+	});
 });
 
