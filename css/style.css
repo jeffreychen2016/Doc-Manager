@@ -178,7 +178,8 @@ input[type="file"] {
     text-align: center;
 }
 
-#directory_manager_form {
+#directory_manager_form,
+#file_manager_form {
     border: 2px solid green;
     height: 275px;
 }
