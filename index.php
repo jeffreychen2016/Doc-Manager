@@ -122,12 +122,11 @@ include 'process.php';
 				<div id="file_manager">
 					<h3 class="sub_title">Files</h3>
 					<form action="process.php" method="post"  id="file_manager_form">
-
-						<input type="text" name="directory_manager_form" hidden>
+						<input type="text" name="file_manager_form" hidden>
 					</form>
 					<div class="doc_manager_btn_group">
 						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit</button>
-						<button type="button" class="btn btn-primary">Delete</button>
+						<button type="button" class="btn btn-primary" id="delete_file_btn">Delete</button>
 					</div>
 				</div>
 			</div>

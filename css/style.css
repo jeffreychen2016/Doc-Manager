@@ -182,6 +182,7 @@ input[type="file"] {
 #file_manager_form {
     border: 2px solid green;
     height: 275px;
+    margin-bottom: 5px;
 }
 
 .doc_manager_btn_group {
@@ -214,7 +215,8 @@ input[type="file"] {
     size: 2em;
 } */
 
-#doc_manager_dir_list {
+#doc_manager_dir_list,
+#doc_manager_file_list {
     display: block;
     width: 100%;
     height: 100%;
