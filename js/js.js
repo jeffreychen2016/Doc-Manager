@@ -112,6 +112,11 @@ $( document ).ready(function() {
 		$('#SQL_convertor_textarea').val(converted_string);
 	});	
 
+	function enableBtns(){
+		$('.delete_btn').prop('disabled',false);
+		$('.edit_btn').prop('disabled',false);
+	}
+
 	// copy the content in the textarea
 	$('#copy-btn').click(function(){
 		$('#SQL_convertor_textarea').select();
@@ -150,6 +155,7 @@ $( document ).ready(function() {
 	});
 
 	$(document).on('click','.list_of_directory', function(e){
+		enableBtns();
 		new Promise(function(resolve,reject){
 			$.ajax({
 				url: './process.php',

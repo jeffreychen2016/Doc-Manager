@@ -110,8 +110,8 @@ include 'process.php';
 					</form>
 					<div class="doc_manager_btn_group">
 						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_dir_modal">Add</button>
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit_dir_modal">Edit</button>
-						<button type="button" class="btn btn-primary" id="delete_directory_btn">Delete</button>
+						<button type="button" class="btn btn-primary delete_btn" data-toggle="modal" data-target="#edit_dir_modal" disabled>Edit</button>
+						<button type="button" class="btn btn-primary edit_btn" id="delete_directory_btn" disabled>Delete</button>
 					</div>
 				</div>
 				
@@ -168,12 +168,14 @@ include 'process.php';
 							<h4 class="modal-title" id="myModalLabel">Edit Directory</h4>
 						</div>
 						<div class="modal-body">
+							<label>Original Name</label>
+
 							<label for="edit_directory_name">Directory Name</label>
 							<input type="text" id="edit_directory_name" name="edit_directory_name">
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary"  name="submit_create_directory" value="Add Directory"></input>
+							<input type="submit" class="btn btn-primary"  name="submit_create_directory" value="Save Change"></input>
 						</div>
 					</div>
 				</div>
