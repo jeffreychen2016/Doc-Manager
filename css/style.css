@@ -202,6 +202,7 @@ input[type="file"] {
     height: 100%;
 }
 
-#original_doc_name {
+#original_dir_name,
+#original_file_name {
     color: red;
 }

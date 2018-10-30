@@ -123,8 +123,14 @@ $( document ).ready(function() {
 	};
 
 	function getOriginalDocName(e){
-		$('#original_doc_name').html($(e.target).val());
-		$('#selected_dir_for_renaming').attr('value',$(e.target).val());
+		if ($(e.target).hasClass('list_of_directory')) {
+			$('#original_dir_name').html($(e.target).val());
+			$('#selected_dir_for_renaming').attr('value',$(e.target).val());
+		} else if ($(e.target).hasClass('list_of_file')) {
+			$('#original_file_name').html($(e.target).val());
+			$('#selected_file_for_renaming').attr('value',$(e.target).val());
+			$('#selected_dir_name').attr('value',$('#dirForFileDelete').val());
+		}
 	};
 
 	// copy the content in the textarea
@@ -182,7 +188,7 @@ $( document ).ready(function() {
 
 	$(document).on('click','.list_of_file', function(e){
 		enableBtns(e);
-		// getOriginalDocName(e);
+		getOriginalDocName(e);
 	});
 
 	$(document).on('click','#delete_file_btn',function(){

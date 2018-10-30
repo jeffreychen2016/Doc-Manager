@@ -125,7 +125,7 @@ include 'process.php';
 						<input type="text" name="file_manager_form" hidden>
 					</form>
 					<div class="doc_manager_btn_group">
-						<button type="button" class="btn btn-primary edit_file_btn" data-toggle="modal" data-target="#myModal" disabled>Edit</button>
+						<button type="button" class="btn btn-primary edit_file_btn" data-toggle="modal" data-target="#edit_file_modal" disabled>Edit</button>
 						<button type="button" class="btn btn-primary delete_file_btn" id="delete_file_btn" disabled>Delete</button>
 					</div>
 				</div>
@@ -169,7 +169,7 @@ include 'process.php';
 						</div>
 						<div class="modal-body">
 							<label>Original Name:</label>
-							<label id='original_doc_name'></label>
+							<label id='original_dir_name'></label>
 							<label>=></label>
 							<label for="edit_directory_name">New Name:</label>
 							<input type="text" id="new_directory_name" name="edit_directory_name">
@@ -178,6 +178,32 @@ include 'process.php';
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							<input type="submit" class="btn btn-primary"  name="submit_edit_directory" value="Save Change"></input>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- Edit File Modal -->
+		<div class="modal fade" id="edit_file_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<form action="process.php" method="post" id="edit_file_form">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Edit File</h4>
+						</div>
+						<div class="modal-body">
+							<label>Original Name:</label>
+							<label id='original_file_name'></label>
+							<label>=></label>
+							<label for="edit_file_name">New Name:</label>
+							<input type="text" id="new_file_name" name="edit_file_name">
+							<input type="text" id="selected_file_for_renaming" name="selected_file_for_renaming" hidden>
+							<input type="text" id="selected_dir_name" name="selected_dir_name" hidden>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<input type="submit" class="btn btn-primary"  name="submit_edit_file" value="Save Change"></input>
 						</div>
 					</div>
 				</div>
