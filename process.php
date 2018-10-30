@@ -73,7 +73,6 @@
 		$domString .= '<select name="selected_directory_to_delete" size="10" id="doc_manager_dir_list">';
 
 		for ($i = 0; $i < count($directories); $i++ ) {
-			// $domString .= '<li><a class="doc_mananger_directory" name="' . $directories[$i] . '" value="' . $directories[$i] . '">' . $directories[$i] . '</a></li>';
 			$domString .= '<option class="list_of_directory" value="'. $directories[$i] . '">'. $directories[$i] . '</option>';
 		};
 
@@ -100,7 +99,7 @@
 
 	function createNewDirectory(){
 		if (isset($_POST['submit_create_directory'])) {
-			$directoryName = $_POST['directory_name'];
+			$directoryName = $_POST['add_directory_name'];
 			mkdir(".\\docs\\" . $directoryName, 0700, false);
 			header('Location: index.php'); 
 		}
@@ -133,7 +132,8 @@
 			};
 	
 			$domString .= '</select>';
-			// add directory name here, so when delete a file, I know which dir the file is in
+			// add directory name when generating the list of file, 
+			// so when trying to delete a file, I know which dir the file is in
 			$domString .= '<input type="text" name="dirForFileDelete" value="' . $_GET['selectedDir'] . '" hidden>';
 			echo $domString;
 		}

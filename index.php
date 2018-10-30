@@ -109,8 +109,8 @@ include 'process.php';
 						<input type="text" name="directory_manager_form" hidden>
 					</form>
 					<div class="doc_manager_btn_group">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button>
-						<button type="button" class="btn btn-primary">Edit</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_dir_modal">Add</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit_dir_modal">Edit</button>
 						<button type="button" class="btn btn-primary" id="delete_directory_btn">Delete</button>
 					</div>
 				</div>
@@ -137,7 +137,7 @@ include 'process.php';
 			
 		</div>
 		<!-- Create Directory Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal fade" id="add_dir_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<form action="process.php" method="post" id="create_directory_form">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -147,7 +147,7 @@ include 'process.php';
 						</div>
 						<div class="modal-body">
 							<label for="add_directory_name">Directory Name</label>
-							<input type="text" id="add_directory_name" name="directory_name">
+							<input type="text" id="add_directory_name" name="add_directory_name">
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -158,7 +158,29 @@ include 'process.php';
 				</div>
 			</form>
 		</div>
+		<!-- Edit Directory Modal -->
+		<div class="modal fade" id="edit_dir_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<form action="process.php" method="post" id="create_directory_form">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Edit Directory</h4>
+						</div>
+						<div class="modal-body">
+							<label for="edit_directory_name">Directory Name</label>
+							<input type="text" id="edit_directory_name" name="edit_directory_name">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<input type="submit" class="btn btn-primary"  name="submit_create_directory" value="Add Directory"></input>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
+
 
 	<!--CSS,JQuery,JS -->
 	<script
