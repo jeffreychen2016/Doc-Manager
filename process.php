@@ -128,7 +128,7 @@
 			$domString .= '<select name="selected_file_to_delete" size="10" id="doc_manager_file_list">';
 	
 			for ($i = 0; $i < count($files); $i++ ) {
-				$domString .= '<option value="'. $files[$i] . '">'. $files[$i] . '</option>';
+				$domString .= '<option class="list_of_file" value="'. $files[$i] . '">'. $files[$i] . '</option>';
 			};
 	
 			$domString .= '</select>';
@@ -152,7 +152,7 @@
 		if (isset($_POST['submit_edit_directory'])) {
 			$originalDirName = '.\\docs\\' . $_POST['selected_dir_for_renaming'];
 			$newDirName = '.\\docs\\' . $_POST['edit_directory_name'];
-			
+
 			rename($originalDirName, $newDirName);
 			header('Location: index.php'); 
 		} 

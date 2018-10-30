@@ -110,8 +110,8 @@ include 'process.php';
 					</form>
 					<div class="doc_manager_btn_group">
 						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_dir_modal">Add</button>
-						<button type="button" class="btn btn-primary delete_btn" data-toggle="modal" data-target="#edit_dir_modal" disabled>Edit</button>
-						<button type="button" class="btn btn-primary edit_btn" id="delete_directory_btn" disabled>Delete</button>
+						<button type="button" class="btn btn-primary edit_dir_btn" data-toggle="modal" data-target="#edit_dir_modal" disabled>Edit</button>
+						<button type="button" class="btn btn-primary delete_dir_btn" id="delete_directory_btn" disabled>Delete</button>
 					</div>
 				</div>
 				
@@ -125,8 +125,8 @@ include 'process.php';
 						<input type="text" name="file_manager_form" hidden>
 					</form>
 					<div class="doc_manager_btn_group">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit</button>
-						<button type="button" class="btn btn-primary" id="delete_file_btn">Delete</button>
+						<button type="button" class="btn btn-primary edit_file_btn" data-toggle="modal" data-target="#myModal" disabled>Edit</button>
+						<button type="button" class="btn btn-primary delete_file_btn" id="delete_file_btn" disabled>Delete</button>
 					</div>
 				</div>
 			</div>
