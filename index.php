@@ -15,7 +15,7 @@ include 'process.php';
 				</div>
 				<ul class="nav navbar-nav">
 					<?php
-						generatingDirectoriesInNav();
+						generatingDirectoriesInNav(rootDir);
 					?>
 				</ul>		
 			</div>
@@ -26,7 +26,7 @@ include 'process.php';
 			<div class="sidebar">
 				<ul>
 					<li>
-						<a href=<?php getLinksForDownladingDocx() ?> class="sidebar-icon sidebar-icon-label" download><span class="glyphicon glyphicon-download-alt sidebar-icon"></span>Download</a>
+						<a href=<?php getLinksForDownladingDocx(rootDir) ?> class="sidebar-icon sidebar-icon-label" download><span class="glyphicon glyphicon-download-alt sidebar-icon"></span>Download</a>
 					</li>
 					<li>
 						<a href="#" class="sidebar-icon sidebar-icon-label" id="upload_btn"><span class="glyphicon glyphicon-upload sidebar-icon"></span>Upload</a>
@@ -53,7 +53,7 @@ include 'process.php';
 					{
 						// (key($_GET) = file name without extension
 						// it is the one in url filename=true
-						openPDF($_GET['directoryName'],$_GET['fileName']);
+						openPDF(rootDir,$_GET['directoryName'],$_GET['fileName']);
 					}
 				 ?>
 			</div>
@@ -78,7 +78,7 @@ include 'process.php';
 				 <span id="file_selected">No file selected</span>
 				 <div id="categories">
 					 <?php
-						buildDomStringForDirectoryDropDown();
+						buildDomStringForDirectoryDropDown(rootDir);
 					 ?>
 				 </div>
 				 <span id="directory_selected">No directory selected</span>
@@ -104,7 +104,7 @@ include 'process.php';
 					<h3 class="sub_title">Directories</h3>
 					<form action="process.php" method="post"  id="directory_manager_form">
 						<?php
-							listAllDirectories();
+							listAllDirectories(rootDir);
 						?>
 						<input type="text" name="directory_manager_form" hidden>
 					</form>
