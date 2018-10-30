@@ -1,10 +1,5 @@
 $( document ).ready(function() {
 
-	// on pageload, hide all modules other than PDF
-	// remove_SQL_convertor();
-	// remove_upload_window();
-	// remove_doc_manager();
-
 	function remove_iframe(){
 		$('#iframe-container').css('display','none');
 	}
