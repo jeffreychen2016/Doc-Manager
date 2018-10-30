@@ -115,7 +115,12 @@ $( document ).ready(function() {
 	function enableBtns(){
 		$('.delete_btn').prop('disabled',false);
 		$('.edit_btn').prop('disabled',false);
-	}
+	};
+
+	function getOriginalDocName(e){
+		$('#original_doc_name').html($(e.target).val());
+		$('#selected_dir_for_renaming').attr('value',$(e.target).val());
+	};
 
 	// copy the content in the textarea
 	$('#copy-btn').click(function(){
@@ -156,6 +161,7 @@ $( document ).ready(function() {
 
 	$(document).on('click','.list_of_directory', function(e){
 		enableBtns();
+		getOriginalDocName(e);
 		new Promise(function(resolve,reject){
 			$.ajax({
 				url: './process.php',

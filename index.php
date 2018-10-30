@@ -160,7 +160,7 @@ include 'process.php';
 		</div>
 		<!-- Edit Directory Modal -->
 		<div class="modal fade" id="edit_dir_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<form action="process.php" method="post" id="create_directory_form">
+			<form action="process.php" method="post" id="edit_directory_form">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -168,14 +168,16 @@ include 'process.php';
 							<h4 class="modal-title" id="myModalLabel">Edit Directory</h4>
 						</div>
 						<div class="modal-body">
-							<label>Original Name</label>
-
-							<label for="edit_directory_name">Directory Name</label>
-							<input type="text" id="edit_directory_name" name="edit_directory_name">
+							<label>Original Name:</label>
+							<label id='original_doc_name'></label>
+							<label>=></label>
+							<label for="edit_directory_name">New Name:</label>
+							<input type="text" id="new_directory_name" name="edit_directory_name">
+							<input type="text" id="selected_dir_for_renaming" name="selected_dir_for_renaming" hidden>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary"  name="submit_create_directory" value="Save Change"></input>
+							<input type="submit" class="btn btn-primary"  name="submit_edit_directory" value="Save Change"></input>
 						</div>
 					</div>
 				</div>

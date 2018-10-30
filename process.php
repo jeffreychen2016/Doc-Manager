@@ -148,9 +148,20 @@
 		} 
 	}
 
+	function renameDir(){
+		if (isset($_POST['submit_edit_directory'])) {
+			$originalDirName = '.\\docs\\' . $_POST['selected_dir_for_renaming'];
+			$newDirName = '.\\docs\\' . $_POST['edit_directory_name'];
+			
+			rename($originalDirName, $newDirName);
+			header('Location: index.php'); 
+		} 
+	}
+
 	uploadFile();
 	createNewDirectory();
 	deleteDirectory();
 	listAllFiles();
 	deleteFiles();
+	renameDir();
 ?>
