@@ -73,7 +73,6 @@
 		$domString .= '<select name="selected_directory_to_delete" size="10" id="doc_manager_dir_list">';
 
 		for ($i = 0; $i < count($directories); $i++ ) {
-			// $domString .= '<li><a class="doc_mananger_directory" name="' . $directories[$i] . '" value="' . $directories[$i] . '">' . $directories[$i] . '</a></li>';
 			$domString .= '<option class="list_of_directory" value="'. $directories[$i] . '">'. $directories[$i] . '</option>';
 		};
 
@@ -100,7 +99,7 @@
 
 	function createNewDirectory(){
 		if (isset($_POST['submit_create_directory'])) {
-			$directoryName = $_POST['directory_name'];
+			$directoryName = $_POST['add_directory_name'];
 			mkdir(".\\docs\\" . $directoryName, 0700, false);
 			header('Location: index.php'); 
 		}
@@ -129,12 +128,13 @@
 			$domString .= '<select name="selected_file_to_delete" size="10" id="doc_manager_file_list">';
 	
 			for ($i = 0; $i < count($files); $i++ ) {
-				$domString .= '<option value="'. $files[$i] . '">'. $files[$i] . '</option>';
+				$domString .= '<option class="list_of_file" value="'. $files[$i] . '">'. $files[$i] . '</option>';
 			};
 	
 			$domString .= '</select>';
-			// add directory name here, so when delete a file, I know which dir the file is in
-			$domString .= '<input type="text" name="dirForFileDelete" value="' . $_GET['selectedDir'] . '" hidden>';
+			// add directory name when generating the list of file, 
+			// so when trying to delete a file, I know which dir the file is in
+			$domString .= '<input type="text" id="dirForFileDelete" name="dirForFileDelete" value="' . $_GET['selectedDir'] . '" hidden>';
 			echo $domString;
 		}
 	}
@@ -148,9 +148,33 @@
 		} 
 	}
 
+	function renameDir(){
+		if (isset($_POST['submit_edit_directory'])) {
+			$originalDirName = '.\\docs\\' . $_POST['selected_dir_for_renaming'];
+			$newDirName = '.\\docs\\' . $_POST['edit_directory_name'];
+
+			rename($originalDirName, $newDirName);
+			header('Location: index.php'); 
+		} 
+	}
+
+	function renameFile(){
+		if (isset($_POST['submit_edit_file'])) {
+			// $originalFileName = '.\\docs\\' . $_POST['selected_dir_name'] . '\\';
+			$originalFileName = '.\\docs\\' . $_POST['selected_dir_name'] . '\\' . $_POST['selected_file_for_renaming'];
+			$newFileName = '.\\docs\\' . $_POST['selected_dir_name'] . '\\' . $_POST['edit_file_name'];
+
+			rename($originalFileName, $newFileName);
+			header('Location: index.php'); 
+		} 
+	}
+
+
 	uploadFile();
 	createNewDirectory();
 	deleteDirectory();
 	listAllFiles();
 	deleteFiles();
+	renameDir();
+	renameFile();
 ?>

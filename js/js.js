@@ -112,6 +112,27 @@ $( document ).ready(function() {
 		$('#SQL_convertor_textarea').val(converted_string);
 	});	
 
+	function enableBtns(e){
+		if ($(e.target).hasClass('list_of_directory')){
+			$('.delete_dir_btn').prop('disabled',false);
+			$('.edit_dir_btn').prop('disabled',false);
+		} else if ($(e.target).hasClass('list_of_file')) {
+			$('.delete_file_btn').prop('disabled',false);
+			$('.edit_file_btn').prop('disabled',false);
+		}
+	};
+
+	function getOriginalDocName(e){
+		if ($(e.target).hasClass('list_of_directory')) {
+			$('#original_dir_name').html($(e.target).val());
+			$('#selected_dir_for_renaming').attr('value',$(e.target).val());
+		} else if ($(e.target).hasClass('list_of_file')) {
+			$('#original_file_name').html($(e.target).val());
+			$('#selected_file_for_renaming').attr('value',$(e.target).val());
+			$('#selected_dir_name').attr('value',$('#dirForFileDelete').val());
+		}
+	};
+
 	// copy the content in the textarea
 	$('#copy-btn').click(function(){
 		$('#SQL_convertor_textarea').select();
@@ -149,7 +170,11 @@ $( document ).ready(function() {
 		$('#directory_manager_form').submit();
 	});
 
+	// can not have a form inside of another
+	// in order to trigger the GET request, using the ajax instead
 	$(document).on('click','.list_of_directory', function(e){
+		enableBtns(e);
+		getOriginalDocName(e);
 		new Promise(function(resolve,reject){
 			$.ajax({
 				url: './process.php',
@@ -159,6 +184,11 @@ $( document ).ready(function() {
 				$('#file_manager_form').html(res);
 			});
 		})
+	});
+
+	$(document).on('click','.list_of_file', function(e){
+		enableBtns(e);
+		getOriginalDocName(e);
 	});
 
 	$(document).on('click','#delete_file_btn',function(){
