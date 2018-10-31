@@ -1,0 +1,7 @@
+SELECT
+COALESCE(CONCAT(ad.reference_id,'-',a.attachment_id,'.',SUBSTRING_INDEX(a.uploadedfilename, '.', -1)),''), -- ImageFileName *(Custom)
+CONCAT(a.uploadeddirectory,'\',a.uploadedfilename) AS PITDocsRelativeFilePath,
+COALESCE(CONCAT(ad.reference_id,'-',a.attachment_id,'.',SUBSTRING_INDEX(a.uploadedfilename, '.', -1)),'')  AS ResultingFileName
+FROM attachmentdetails ad 
+INNER JOIN attachments a ON a.attachment_id = ad.attachment_id
+GROUP BY a.uploadedfilename

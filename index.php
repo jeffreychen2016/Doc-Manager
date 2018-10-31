@@ -48,14 +48,7 @@ include 'process.php';
 			</a>
 			<!-- iframe section -->
  			<div id="iframe-container">
-				<?php
-					if (!empty(key($_GET)) && (key($_GET) != 'msg')) 
-					{
-						// (key($_GET) = file name without extension
-						// it is the one in url filename=true
-						openPDF(rootDir,$_GET['directoryName'],$_GET['fileName']);
-					}
-				 ?>
+
 			</div>
 			<!-- iframe section end -->
 			<!-- SQL Convertor -->

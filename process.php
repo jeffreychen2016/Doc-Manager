@@ -1,10 +1,24 @@
 <?php
 	define("rootDir", "./docs/");
 
-	function openPDF($rootDir,$direcotry,$filename){
-		// the space in the filename is changed to _ (underscore) for some reason
-		// so in order to natch the file name, replace the _ with empty
-		echo '<iframe class="iframe" src="'. $rootDir . $direcotry . '/' . str_replace('_',' ',$filename) . '.pdf' . '"' . '></iframe>';
+	// function openPDF($rootDir,$direcotry,$filename){
+	// 	// the space in the filename is changed to _ (underscore) for some reason
+	// 	// so in order to natch the file name, replace the _ with empty
+	// 	echo '<iframe class="iframe" src="'. $rootDir . $direcotry . '/' . str_replace('_',' ',$filename) . '.pdf' . '"' . '></iframe>';
+	// };
+
+	// function openPDF($rootDir,$direcotry,$filename){
+	// 	// the space in the filename is changed to _ (underscore) for some reason
+	// 	// so in order to natch the file name, replace the _ with empty
+	// 	echo '<iframe class="iframe" src="'. $rootDir . $direcotry . '/' . str_replace('_',' ',$filename) . '.pdf' . '"' . '></iframe>';
+	// };
+
+	function openPDF($rootDir){
+		if (isset($_GET['openPDF'])) {
+			// the space in the filename is changed to _ (underscore) for some reason
+			// so in order to natch the file name, replace the _ with empty
+			echo '<iframe class="iframe" src="'. $rootDir . $_GET['directoryNameForPDF'] . '/' . str_replace('_',' ',$_GET['fileNameForPDF']) . '.pdf' . '"' . '></iframe>';
+		}
 	};
 
 	function getLinksForDownladingDocx($rootDir){
@@ -170,7 +184,7 @@
 		} 
 	}
 
-
+	openPDF(rootDir);
 	uploadFile(rootDir);
 	createNewDirectory(rootDir);
 	deleteDirectory(rootDir);
