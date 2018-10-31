@@ -50,6 +50,33 @@ $( document ).ready(function() {
 		$(e.target).attr("name", $(e.target).html());
 	});
 
+	// do not have reference to rootDir in js
+	// so send parameters to php
+	$(document).on('click','.open-pdf-iframe',function(e){
+		event.preventDefault();
+		var directoryName = $(e.target).attr('href').split('?')[1].split('&')[0].split('=')[1];
+		var fileName = $(e.target).attr('href').split('?')[1].split('&')[1].split('=')[1];
+		
+		new Promise(function(resolve,reject){
+			$.ajax({
+				url: './process.php',
+				data: {
+					openPDF: true,
+					directoryNameForPDF: directoryName,
+					fileNameForPDF: fileName
+				},
+				type: 'GET'
+			}).then((res) => {;
+				remove_upload_window();
+				remove_doc_manager();
+				$('#iframe-container').css('display','block');
+				$('#iframe-container').html(res);
+			}).catch((err) => {
+				console.error(err);
+			});
+		})
+	});
+
 	//-- convert sql --//
 	$('#convert-btn').click(function(){
 		var strings_to_be_tenant_id = /tenant_id\s{0,5}=\s{0,5}\d{0,5}/ig;
