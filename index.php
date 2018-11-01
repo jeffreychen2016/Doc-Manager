@@ -74,16 +74,7 @@ include 'process.php';
 				 <span id="directory_selected">No directory selected</span>
 				 <p><input type="submit" name="submit_upload_file" value="Upload This File" id="upload_this_file"></p>
 				 <?php 
-				 	if (isset($_GET['msg'])) 
-				 	{
-				 		$response_code = $_GET['msg'];
-				 		if ($response_code == 1) 
-				 		{
-				 			print '<p class="success_message message">Your file was uploaded succesfully!</p>';
-				 		} else {
-							print '<p class="failure_message message">Something is broken, failed to upload!</p>';
-						}
-					}
+						printUploadMessage();
 				 ?>
 			</form>
 		</div>

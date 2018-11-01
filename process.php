@@ -84,8 +84,21 @@
 			} else {
 				$message = 0;
 			};
-			header('Location: index.php?msg=' . $message); 
+			header('Location: index.php?uploadmsg=' . $message); 
 		};
+	};
+
+	function printUploadMessage(){
+		if (isset($_GET['uploadmsg'])) 
+		{
+			$response_code = $_GET['uploadmsg'];
+			if ($response_code == 1) 
+			{
+				print '<p class="success_message message">Your file was uploaded succesfully!</p>';
+			} else {
+			 print '<p class="failure_message message">Something is broken, failed to upload!</p>';
+		 }
+	 }
 	};
 
 	function createNewDirectory($rootDir){
