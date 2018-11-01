@@ -162,6 +162,12 @@ $( document ).ready(function() {
 		$('#download_file_link').attr('href','docs/' + selectedDir + '/' +  selectedFile);
 	};
 
+	function disableBtnsWhenSelectNewDir(){
+		$('.download_file_btn').prop('disabled',true);	
+		$('.delete_file_btn').prop('disabled',true);
+		$('.edit_file_btn').prop('disabled',true);
+	}
+
 	// copy the content in the textarea
 	$('#copy-btn').click(function(){
 		$('#SQL_convertor_textarea').select();
@@ -204,6 +210,7 @@ $( document ).ready(function() {
 	$(document).on('click','.list_of_directory', function(e){
 		enableBtns(e);
 		getOriginalDocName(e);
+		disableBtnsWhenSelectNewDir();
 		new Promise(function(resolve,reject){
 			$.ajax({
 				url: './process.php',
