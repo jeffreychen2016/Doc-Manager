@@ -19,7 +19,8 @@
 		$directories = getDirectories($rootDir);
 		$domString = '';
 		$domString .= '<select id="file_destination" name="file_destination_dropdown">';
-
+		$domString .= '<option>-- Please Select --</option>';
+		
 		for ($i = 0; $i < count($directories); $i++ ) {
 			$domString .= '<option value="' . $directories[$i] . '">' . ($directories[$i]) . '</option>';
 		};
@@ -68,7 +69,6 @@
 		};
 
 		$domString .= '</select>';
-
 		echo $domString;
 	};
 
@@ -84,8 +84,21 @@
 			} else {
 				$message = 0;
 			};
-			header('Location: index.php?msg=' . $message); 
+			header('Location: index.php?uploadmsg=' . $message); 
 		};
+	};
+
+	function printUploadMessage(){
+		if (isset($_GET['uploadmsg'])) 
+		{
+			$response_code = $_GET['uploadmsg'];
+			if ($response_code == 1) 
+			{
+				print '<p class="success_message message">Your file was uploaded succesfully!</p>';
+			} else {
+			 print '<p class="failure_message message">Something is broken, failed to upload!</p>';
+		 }
+	 }
 	};
 
 	function createNewDirectory($rootDir){
