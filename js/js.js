@@ -139,6 +139,7 @@ $( document ).ready(function() {
 			$('.delete_dir_btn').prop('disabled',false);
 			$('.edit_dir_btn').prop('disabled',false);
 		} else if ($(e.target).hasClass('list_of_file')) {
+			$('.download_file_btn').prop('disabled',false);	
 			$('.delete_file_btn').prop('disabled',false);
 			$('.edit_file_btn').prop('disabled',false);
 		}
@@ -153,6 +154,12 @@ $( document ).ready(function() {
 			$('#selected_file_for_renaming').attr('value',$(e.target).val());
 			$('#selected_dir_name').attr('value',$('#dirForFileDelete').val());
 		}
+	};
+
+	function setHrefForDownloading(){
+		var selectedDir = $('#dirForFileDelete').val();
+		var selectedFile = $('#doc_manager_file_list').find(":selected").text();
+		$('#download_file_link').attr('href','docs/' + selectedDir + '/' +  selectedFile);
 	};
 
 	// copy the content in the textarea
@@ -211,6 +218,7 @@ $( document ).ready(function() {
 	$(document).on('click','.list_of_file', function(e){
 		enableBtns(e);
 		getOriginalDocName(e);
+		setHrefForDownloading();
 	});
 
 	$(document).on('click','#delete_file_btn',function(){
