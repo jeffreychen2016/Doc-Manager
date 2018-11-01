@@ -105,8 +105,8 @@ include 'process.php';
 					</div>
 				</div>
 				
-				<div id="arrow_sign">
-						
+				<div id="arrow_sign_container">
+						<img src="./imgs/right-arrow.png" alt="arrow-sign" id="arrow_sign">
 				</div>
 
 				<div id="file_manager">
@@ -115,7 +115,7 @@ include 'process.php';
 						<input type="text" name="file_manager_form" hidden>
 					</form>
 					<div class="doc_manager_btn_group">
-						<a href="" id="download_file_link" download><button type="button" class="btn btn-primary download_file_btn" id="download_file_btn" disabled>Download</button><a>
+						<a href="" id="download_file_link" download><button type="button" class="btn btn-primary download_file_btn" id="download_file_btn" disabled>Download</button></a>
 						<button type="button" class="btn btn-primary edit_file_btn" data-toggle="modal" data-target="#edit_file_modal" disabled>Edit</button>
 						<button type="button" class="btn btn-primary delete_file_btn" id="delete_file_btn" disabled>Delete</button>
 					</div>

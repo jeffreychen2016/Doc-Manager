@@ -9,18 +9,6 @@
 		}
 	};
 
-	// function getLinksForDownladingDocx($rootDir){
-	// 	if (isset($_GET['directoryName']))
-	// 	{
-	// 		$direcotryName = $_GET['directoryName'];
-	// 		$file = $_GET['fileName'];
-	// 		$fileName = $file . '.pdf';
-	// 		echo '"' . $rootDir . $direcotryName . '/' . $fileName . '"';
-	// 	} else {
-	// 		echo '""';
-	// 	}; 
-	// };
-
 	function getDirectories($rootDir){
 		$directories = array_slice(scandir($rootDir),2);
 
