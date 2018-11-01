@@ -44,6 +44,7 @@ $( document ).ready(function() {
 			remove_SQL_convertor();
 			$('#upload_window').css('display','block');
 			$('#doc_manager_container').css('display','block');
+			$('.message').css('display','none')
 		});
 	};
 
