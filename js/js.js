@@ -139,6 +139,7 @@ $( document ).ready(function() {
 			$('.delete_dir_btn').prop('disabled',false);
 			$('.edit_dir_btn').prop('disabled',false);
 		} else if ($(e.target).hasClass('list_of_file')) {
+			$('.download_file_btn').prop('disabled',false);	
 			$('.delete_file_btn').prop('disabled',false);
 			$('.edit_file_btn').prop('disabled',false);
 		}
@@ -154,6 +155,18 @@ $( document ).ready(function() {
 			$('#selected_dir_name').attr('value',$('#dirForFileDelete').val());
 		}
 	};
+
+	function setHrefForDownloading(){
+		var selectedDir = $('#dirForFileDelete').val();
+		var selectedFile = $('#doc_manager_file_list').find(":selected").text();
+		$('#download_file_link').attr('href','docs/' + selectedDir + '/' +  selectedFile);
+	};
+
+	function disableBtnsWhenSelectNewDir(){
+		$('.download_file_btn').prop('disabled',true);	
+		$('.delete_file_btn').prop('disabled',true);
+		$('.edit_file_btn').prop('disabled',true);
+	}
 
 	// copy the content in the textarea
 	$('#copy-btn').click(function(){
@@ -197,6 +210,7 @@ $( document ).ready(function() {
 	$(document).on('click','.list_of_directory', function(e){
 		enableBtns(e);
 		getOriginalDocName(e);
+		disableBtnsWhenSelectNewDir();
 		new Promise(function(resolve,reject){
 			$.ajax({
 				url: './process.php',
@@ -211,6 +225,7 @@ $( document ).ready(function() {
 	$(document).on('click','.list_of_file', function(e){
 		enableBtns(e);
 		getOriginalDocName(e);
+		setHrefForDownloading();
 	});
 
 	$(document).on('click','#delete_file_btn',function(){

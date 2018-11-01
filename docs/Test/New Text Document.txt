@@ -1,1 +1,0 @@
-SELECT AccountCode, Concat(AccountCode, ' - ' ,Description) as Description FROM SEGMENTSLEVEL04 WHERE ACCOUNTTYPE_ID=0 AND ParentRef1=? AND Reference_id = ?  AND AccCodeGroup_ID = '1' AND Tenant_ID = '316' AND Enabled=1 ORDER BY ACCOUNTCODE

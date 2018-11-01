@@ -26,9 +26,6 @@ include 'process.php';
 			<div class="sidebar">
 				<ul>
 					<li>
-						<a href=<?php getLinksForDownladingDocx(rootDir) ?> class="sidebar-icon sidebar-icon-label" download><span class="glyphicon glyphicon-download-alt sidebar-icon"></span>Download</a>
-					</li>
-					<li>
 						<a href="#" class="sidebar-icon sidebar-icon-label" id="upload_btn"><span class="glyphicon glyphicon-upload sidebar-icon"></span>Upload</a>
 					</li>
 					<li>
@@ -108,8 +105,8 @@ include 'process.php';
 					</div>
 				</div>
 				
-				<div id="arrow_sign">
-						
+				<div id="arrow_sign_container">
+						<img src="./imgs/right-arrow.png" alt="arrow-sign" id="arrow_sign">
 				</div>
 
 				<div id="file_manager">
@@ -118,6 +115,7 @@ include 'process.php';
 						<input type="text" name="file_manager_form" hidden>
 					</form>
 					<div class="doc_manager_btn_group">
+						<a href="" id="download_file_link" download><button type="button" class="btn btn-primary download_file_btn" id="download_file_btn" disabled>Download</button></a>
 						<button type="button" class="btn btn-primary edit_file_btn" data-toggle="modal" data-target="#edit_file_modal" disabled>Edit</button>
 						<button type="button" class="btn btn-primary delete_file_btn" id="delete_file_btn" disabled>Delete</button>
 					</div>
@@ -144,7 +142,7 @@ include 'process.php';
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary"  name="submit_create_directory" value="Add Directory"></input>
+							<input type="submit" class="btn btn-primary"  name="submit_create_directory" value="Add Directory">
 							<!-- <button name="submit_create_directory" class="btn btn-primary" id="submit_file_name"></button> -->
 						</div>
 					</div>
@@ -170,7 +168,7 @@ include 'process.php';
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary"  name="submit_edit_directory" value="Save Change"></input>
+							<input type="submit" class="btn btn-primary"  name="submit_edit_directory" value="Save Change">
 						</div>
 					</div>
 				</div>
@@ -196,7 +194,7 @@ include 'process.php';
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary"  name="submit_edit_file" value="Save Change"></input>
+							<input type="submit" class="btn btn-primary"  name="submit_edit_file" value="Save Change">
 						</div>
 					</div>
 				</div>
