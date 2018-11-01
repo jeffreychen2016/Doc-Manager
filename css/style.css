@@ -141,6 +141,10 @@ input[type="file"] {
     color: red;
 }
 
+#upload_this_file {
+    margin-top: 10px;
+}
+
 /* -------------------------------------- Doc Manager  -------------------------------------- */
 #doc_manager_title {
     text-align: center;
@@ -178,7 +182,7 @@ input[type="file"] {
     margin:0px;
     max-height: 25px;
     text-align: center;
-    background-color: #337ab7;
+    background-color: #5bc0de;
     color: white;
     border-radius: 4px;
 }

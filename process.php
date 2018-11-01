@@ -19,7 +19,8 @@
 		$directories = getDirectories($rootDir);
 		$domString = '';
 		$domString .= '<select id="file_destination" name="file_destination_dropdown">';
-
+		$domString .= '<option>-- Please Select --</option>';
+		
 		for ($i = 0; $i < count($directories); $i++ ) {
 			$domString .= '<option value="' . $directories[$i] . '">' . ($directories[$i]) . '</option>';
 		};
