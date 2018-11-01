@@ -69,7 +69,6 @@
 		};
 
 		$domString .= '</select>';
-
 		echo $domString;
 	};
 
