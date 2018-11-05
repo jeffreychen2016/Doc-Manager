@@ -49,3 +49,21 @@ if you want to run this tool in your local workstation, please follow the follow
 3. Click "Reverse->ET" to remove all base_, additional tenant_id join and put variables back to the sql script.
 
 <img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/9.png" alt="alt text" width="865" height="595">
+
+## php MyFAQ -- (For running this in your local, please read this doc:https://www.phpmyfaq.de/docs/2.9)
+
+1. Click "F.A.Q" button on the left sidebar to open up FAQ page. You can search for issue keywords.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/10.png" alt="alt text" width="865" height="595">
+
+2. Hit enter to pull up all issues that related to your search.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/11.png" alt="alt text" width="865" height="595">
+
+3. Click on an issue you want to read in details.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/12.png" alt="alt text" width="865" height="595">
+
+## Authors
+[Jeffrey Chen](https://github.com/jeffreychen2016)
+
