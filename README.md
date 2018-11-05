@@ -37,4 +37,15 @@ if you want to run this tool in your local workstation, please follow the follow
 
 <img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/6.png" alt="alt text" width="865" height="595">
 
+## SQL Convertor
+1. By clicking on "SQL Convertor" on the left sidebar, an empty textarea will open up. I pre-populate a piece of sql code for demo purpose. You can see the "FROM" and "JOIN" section does not come with base_ and tenant_id join.
 
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/7.png" alt="alt text" width="865" height="595">
+
+2. Click "Convert->SQLyog" button to append base_ to all table names, add tenant_id join on all each join and replace variables with whatever you input.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/8.png" alt="alt text" width="865" height="595">
+
+3. Click "Reverse->ET" to remove all base_, additional tenant_id join and put variables back to the sql script.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/9.png" alt="alt text" width="865" height="595">
