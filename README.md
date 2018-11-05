@@ -11,3 +11,30 @@ if you want to run this tool in your local workstation, please follow the follow
 - run the Apache and MySQL
 - clone down this repository into root directory of XAMPP. Normally, C:\xampp\htdocs\
 - load index.php in your web brower
+
+## File Manager
+1. Once you load index.php in your brower, you should Doc Manager section pops up in the center area of the page, and the tool utility side bar.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/1.png" alt="alt text" width="865" height="595">
+
+2. You can add new a directory by clicking "Add" button in "Directories" box.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/2.png" alt="alt text" width="865" height="595">
+
+3. Once a new directory is seccussfully added, you can see the directory name appears on top navbar, the file upload drop-down and the directories box.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/3.png" alt="alt text" width="865" height="595">
+
+4. You can now select a file to upload to the directory you just added.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/4.png" alt="alt text" width="865" height="595">
+
+5. After you seccessfully upload a file, the file will be availible for for view in the navbar, and availible for "Download", "Edit" (rename) and "Delete" from files box.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/5.png" alt="alt text" width="865" height="595">
+
+6. You can view the file in browser if it is in PDF.
+
+<img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/6.png" alt="alt text" width="865" height="595">
+
+
