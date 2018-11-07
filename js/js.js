@@ -64,14 +64,15 @@ $( document ).ready(function() {
 			event.preventDefault();
 			var directoryName = $(e.target).attr('href').split('?')[1].split('&')[0].split('=')[1];
 			var fileName = $(e.target).attr('href').split('?')[1].split('&')[1].split('=')[1];
-			
+			var extension = $(e.target).attr('href').split('?')[1].split('&')[2].split('=')[1];
 			new Promise(function(resolve,reject){
 				$.ajax({
 					url: './process.php',
 					data: {
 						openPDF: true,
 						directoryNameForPDF: directoryName,
-						fileNameForPDF: fileName
+						fileNameForPDF: fileName,
+						fileExtension: extension
 					},
 					type: 'GET'
 				}).then((res) => {;

@@ -5,7 +5,12 @@
 		if (isset($_GET['openPDF'])) {
 			// the space in the filename is changed to _ (underscore) for some reason
 			// so in order to natch the file name, replace the _ with empty
-			echo '<iframe class="iframe" src="'. $rootDir . $_GET['directoryNameForPDF'] . '/' . str_replace('_',' ',$_GET['fileNameForPDF']) . '.pdf' . '"' . '></iframe>';
+			if($_GET['fileExtension'] == 'txt' || $_GET['fileExtension'] =='pdf'){
+				echo '<iframe class="iframe" src="'. $rootDir . $_GET['directoryNameForPDF'] . '/' . str_replace('_',' ',$_GET['fileNameForPDF']) . '.' . $_GET['fileExtension'] . '"' . '></iframe>';
+			} else {
+				echo '<iframe class="iframe hide" src="'. $rootDir . $_GET['directoryNameForPDF'] . '/' . str_replace('_',' ',$_GET['fileNameForPDF']) . '.' . $_GET['fileExtension'] . '"' . '></iframe>';
+				echo '<div class="iframe"><p id="open_file_message">The file you are trying to open is not in .txt nor .pdf, so it will be downloaded into your local machine instead.</a></div>';
+			}
 		}
 	};
 
@@ -50,9 +55,11 @@
 
 		for ($i = 0; $i < count($files); $i++ ) {
 			$fileNameWithoutExtension = pathinfo($files[$i],PATHINFO_FILENAME);
+			$file = new SplFileInfo($files[$i]);
+			$extension = $file->getExtension();
 			// add both direcotry name and file name to the url
 			// get click on the link, get request sent, the url will have both directory and file name for later retireving file back
-			$domString .=	'<li class="open-pdf-iframe"><a href="index.php?' . 'directoryName=' . $directoryName . '&' .'fileName=' . $fileNameWithoutExtension . '">' . $fileNameWithoutExtension . '</a></li>';
+			$domString .=	'<li class="open-pdf-iframe"><a href="index.php?' . 'directoryName=' . $directoryName . '&' .'fileName=' . $fileNameWithoutExtension . '&' . 'fileExtension=' . $extension . '">' . $fileNameWithoutExtension . '</a></li>';
 		}
 
 		$domString .= '</ul>';
