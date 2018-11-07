@@ -75,7 +75,8 @@ $( document ).ready(function() {
 						fileExtension: extension
 					},
 					type: 'GET'
-				}).then((res) => {;
+				}).then((res) => {
+					remove_SQL_convertor();
 					remove_upload_window();
 					remove_doc_manager();
 					$('#iframe-container').css('display','block');
