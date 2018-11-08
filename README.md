@@ -29,11 +29,11 @@ if you want to run this tool in your local workstation, please follow the follow
 
 <img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/4.png" alt="alt text" width="865" height="595">
 
-5. After you seccessfully upload a file, the file will be availible for for view in the navbar, and availible for "Download", "Edit" (rename) and "Delete" from files box.
+5. After you seccessfully upload a file, the file will be availible for view in the navbar, and availible for "Download", "Edit" (rename) and "Delete" from files box.
 
 <img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/5.png" alt="alt text" width="865" height="595">
 
-6. You can view the file in browser if it is in PDF.
+6. You can view the file in browser if it is in PDF or txt. Files with other extensions will be downloaded into your local workstation instead.
 
 <img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/6.png" alt="alt text" width="865" height="595">
 
@@ -42,7 +42,7 @@ if you want to run this tool in your local workstation, please follow the follow
 
 <img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/7.png" alt="alt text" width="865" height="595">
 
-2. Click "Convert->SQLyog" button to append base_ to all table names, add tenant_id join on all each join and replace variables with whatever you input.
+2. Click "Convert->SQLyog" button to append base_ to all table names, add tenant_id join on all joins and replace variables with whatever you type in in the input boxes.
 
 <img src="https://raw.githubusercontent.com/jeffreychen2016/Handy-Tools-For-My-Work/master/imgs/imgs_for_readme/8.png" alt="alt text" width="865" height="595">
 
